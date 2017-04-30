@@ -70,6 +70,7 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         array (
             'League\\Flysystem\\' => 17,
             'Laravel\\Tinker\\' => 15,
+            'Laracasts\\Generators\\' => 21,
         ),
         'J' => 
         array (
@@ -96,6 +97,7 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         ),
         'B' => 
         array (
+            'Backpack\\Generators\\' => 20,
             'Backpack\\Base\\' => 14,
         ),
         'A' => 
@@ -211,6 +213,10 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
         ),
+        'Laracasts\\Generators\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laracasts/generators/src',
+        ),
         'Jenssegers\\Date\\' => 
         array (
             0 => __DIR__ . '/..' . '/jenssegers/date/src',
@@ -242,6 +248,10 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         'Carbon\\' => 
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
+        ),
+        'Backpack\\Generators\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/backpack/generators/src',
         ),
         'Backpack\\Base\\' => 
         array (
@@ -320,6 +330,15 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         'Backpack\\Base\\app\\Http\\Controllers\\Controller' => __DIR__ . '/..' . '/backpack/base/src/app/Http/Controllers/Controller.php',
         'Backpack\\Base\\app\\Http\\Middleware\\Admin' => __DIR__ . '/..' . '/backpack/base/src/app/Http/Middleware/Admin.php',
         'Backpack\\Base\\app\\Notifications\\ResetPasswordNotification' => __DIR__ . '/..' . '/backpack/base/src/app/Notifications/ResetPasswordNotification.php',
+        'Backpack\\Generators\\Console\\Commands\\ConfigBackpackCommand' => __DIR__ . '/..' . '/backpack/generators/src/Console/Commands/ConfigBackpackCommand.php',
+        'Backpack\\Generators\\Console\\Commands\\CrudBackpackCommand' => __DIR__ . '/..' . '/backpack/generators/src/Console/Commands/CrudBackpackCommand.php',
+        'Backpack\\Generators\\Console\\Commands\\CrudControllerBackpackCommand' => __DIR__ . '/..' . '/backpack/generators/src/Console/Commands/CrudControllerBackpackCommand.php',
+        'Backpack\\Generators\\Console\\Commands\\CrudModelBackpackCommand' => __DIR__ . '/..' . '/backpack/generators/src/Console/Commands/CrudModelBackpackCommand.php',
+        'Backpack\\Generators\\Console\\Commands\\CrudRequestBackpackCommand' => __DIR__ . '/..' . '/backpack/generators/src/Console/Commands/CrudRequestBackpackCommand.php',
+        'Backpack\\Generators\\Console\\Commands\\ModelBackpackCommand' => __DIR__ . '/..' . '/backpack/generators/src/Console/Commands/ModelBackpackCommand.php',
+        'Backpack\\Generators\\Console\\Commands\\RequestBackpackCommand' => __DIR__ . '/..' . '/backpack/generators/src/Console/Commands/RequestBackpackCommand.php',
+        'Backpack\\Generators\\Console\\Commands\\ViewBackpackCommand' => __DIR__ . '/..' . '/backpack/generators/src/Console/Commands/ViewBackpackCommand.php',
+        'Backpack\\Generators\\GeneratorsServiceProvider' => __DIR__ . '/..' . '/backpack/generators/src/GeneratorsServiceProvider.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
@@ -1551,6 +1570,14 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
         'Jenssegers\\Date\\Date' => __DIR__ . '/..' . '/jenssegers/date/src/Date.php',
         'Jenssegers\\Date\\DateServiceProvider' => __DIR__ . '/..' . '/jenssegers/date/src/DateServiceProvider.php',
+        'Laracasts\\Generators\\Commands\\MigrationMakeCommand' => __DIR__ . '/..' . '/laracasts/generators/src/Commands/MigrationMakeCommand.php',
+        'Laracasts\\Generators\\Commands\\PivotMigrationMakeCommand' => __DIR__ . '/..' . '/laracasts/generators/src/Commands/PivotMigrationMakeCommand.php',
+        'Laracasts\\Generators\\Commands\\SeedMakeCommand' => __DIR__ . '/..' . '/laracasts/generators/src/Commands/SeedMakeCommand.php',
+        'Laracasts\\Generators\\GeneratorException' => __DIR__ . '/..' . '/laracasts/generators/src/GeneratorException.php',
+        'Laracasts\\Generators\\GeneratorsServiceProvider' => __DIR__ . '/..' . '/laracasts/generators/src/GeneratorsServiceProvider.php',
+        'Laracasts\\Generators\\Migrations\\NameParser' => __DIR__ . '/..' . '/laracasts/generators/src/Migrations/NameParser.php',
+        'Laracasts\\Generators\\Migrations\\SchemaParser' => __DIR__ . '/..' . '/laracasts/generators/src/Migrations/SchemaParser.php',
+        'Laracasts\\Generators\\Migrations\\SyntaxBuilder' => __DIR__ . '/..' . '/laracasts/generators/src/Migrations/SyntaxBuilder.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
         'Laravel\\Tinker\\TinkerServiceProvider' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerServiceProvider.php',
