@@ -116,6 +116,7 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         array (
             'Barryvdh\\elFinderFlysystemDriver\\' => 33,
             'Barryvdh\\Elfinder\\' => 18,
+            'Backpack\\Settings\\' => 18,
             'Backpack\\LogManager\\' => 20,
             'Backpack\\LangFileManager\\' => 25,
             'Backpack\\Generators\\' => 20,
@@ -324,6 +325,10 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         array (
             0 => __DIR__ . '/..' . '/barryvdh/laravel-elfinder/src',
         ),
+        'Backpack\\Settings\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/backpack/settings/src',
+        ),
         'Backpack\\LogManager\\' => 
         array (
             0 => __DIR__ . '/..' . '/backpack/logmanager/src',
@@ -504,6 +509,11 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         'Backpack\\LangFileManager\\database\\seeds\\LanguageTableSeeder' => __DIR__ . '/..' . '/backpack/langfilemanager/src/database/seeds/LanguageTableSeeder.php',
         'Backpack\\LogManager\\LogManagerServiceProvider' => __DIR__ . '/..' . '/backpack/logmanager/src/LogManagerServiceProvider.php',
         'Backpack\\LogManager\\app\\Http\\Controllers\\LogController' => __DIR__ . '/..' . '/backpack/logmanager/src/app/Http/Controllers/LogController.php',
+        'Backpack\\Settings\\SettingsServiceProvider' => __DIR__ . '/..' . '/backpack/settings/src/SettingsServiceProvider.php',
+        'Backpack\\Settings\\app\\Http\\Controllers\\SettingCrudController' => __DIR__ . '/..' . '/backpack/settings/src/app/Http/Controllers/SettingCrudController.php',
+        'Backpack\\Settings\\app\\Http\\Requests\\SettingRequest' => __DIR__ . '/..' . '/backpack/settings/src/app/Http/Requests/SettingRequest.php',
+        'Backpack\\Settings\\app\\Models\\Setting' => __DIR__ . '/..' . '/backpack/settings/src/app/Models/Setting.php',
+        'Backpack\\Settings\\database\\seeds\\SettingsTableSeeder' => __DIR__ . '/..' . '/backpack/settings/src/database/seeds/SettingsTableSeeder.php',
         'Barryvdh\\Elfinder\\Connector' => __DIR__ . '/..' . '/barryvdh/laravel-elfinder/src/Connector.php',
         'Barryvdh\\Elfinder\\Console\\PublishCommand' => __DIR__ . '/..' . '/barryvdh/laravel-elfinder/src/Console/PublishCommand.php',
         'Barryvdh\\Elfinder\\Elfinder' => __DIR__ . '/..' . '/barryvdh/laravel-elfinder/src/Elfinder.php',

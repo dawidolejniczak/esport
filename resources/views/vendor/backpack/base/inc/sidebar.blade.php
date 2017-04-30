@@ -39,6 +39,9 @@
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/log') }}"><i
                                 class="fa fa-terminal"></i> <span>Logs</span></a></li>
 
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/setting') }}"><i
+                                class="fa fa-cog"></i> <span>Settings</span></a></li>
+
                 <!-- ======================================= -->
                 <li class="header">{{ trans('backpack::base.user') }}</li>
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/logout') }}"><i

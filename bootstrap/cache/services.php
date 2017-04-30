@@ -34,6 +34,7 @@
     30 => 'Spatie\\Backup\\BackupServiceProvider',
     31 => 'Backpack\\BackupManager\\BackupManagerServiceProvider',
     32 => 'Backpack\\LogManager\\LogManagerServiceProvider',
+    33 => 'Backpack\\Settings\\SettingsServiceProvider',
   ),
   'eager' => 
   array (
@@ -57,6 +58,7 @@
     17 => 'Spatie\\Backup\\BackupServiceProvider',
     18 => 'Backpack\\BackupManager\\BackupManagerServiceProvider',
     19 => 'Backpack\\LogManager\\LogManagerServiceProvider',
+    20 => 'Backpack\\Settings\\SettingsServiceProvider',
   ),
   'deferred' => 
   array (
