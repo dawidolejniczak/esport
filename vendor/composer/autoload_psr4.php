@@ -24,6 +24,8 @@ return array(
     'Symfony\\Component\\Debug\\' => array($vendorDir . '/symfony/debug'),
     'Symfony\\Component\\CssSelector\\' => array($vendorDir . '/symfony/css-selector'),
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
+    'Spatie\\DbDumper\\' => array($vendorDir . '/spatie/db-dumper/src'),
+    'Spatie\\Backup\\' => array($vendorDir . '/spatie/laravel-backup/src'),
     'Ramsey\\Uuid\\' => array($vendorDir . '/ramsey/uuid/src'),
     'Psy\\' => array($vendorDir . '/psy/psysh/src/Psy'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
@@ -56,5 +58,6 @@ return array(
     'Backpack\\Generators\\' => array($vendorDir . '/backpack/generators/src'),
     'Backpack\\CRUD\\' => array($vendorDir . '/backpack/crud/src'),
     'Backpack\\Base\\' => array($vendorDir . '/backpack/base/src'),
+    'Backpack\\BackupManager\\' => array($vendorDir . '/backpack/backupmanager/src'),
     'App\\' => array($baseDir . '/app'),
 );

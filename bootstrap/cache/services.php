@@ -31,6 +31,8 @@
     27 => 'Backpack\\Base\\BaseServiceProvider',
     28 => 'Backpack\\CRUD\\CrudServiceProvider',
     29 => 'Backpack\\LangFileManager\\LangFileManagerServiceProvider',
+    30 => 'Spatie\\Backup\\BackupServiceProvider',
+    31 => 'Backpack\\BackupManager\\BackupManagerServiceProvider',
   ),
   'eager' => 
   array (
@@ -51,6 +53,8 @@
     14 => 'Backpack\\Base\\BaseServiceProvider',
     15 => 'Backpack\\CRUD\\CrudServiceProvider',
     16 => 'Backpack\\LangFileManager\\LangFileManagerServiceProvider',
+    17 => 'Spatie\\Backup\\BackupServiceProvider',
+    18 => 'Backpack\\BackupManager\\BackupManagerServiceProvider',
   ),
   'deferred' => 
   array (
