@@ -77,7 +77,7 @@ return [
     |
     */
 
-    'locale' => 'pl',
+    'locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -181,6 +181,7 @@ return [
         * Backpack Service Providers...
         */
         Backpack\Base\BaseServiceProvider::class,
+        Backpack\CRUD\CrudServiceProvider::class,
 
     ],
 

@@ -29,6 +29,7 @@
     25 => 'App\\Providers\\EventServiceProvider',
     26 => 'App\\Providers\\RouteServiceProvider',
     27 => 'Backpack\\Base\\BaseServiceProvider',
+    28 => 'Backpack\\CRUD\\CrudServiceProvider',
   ),
   'eager' => 
   array (
@@ -47,6 +48,7 @@
     12 => 'App\\Providers\\EventServiceProvider',
     13 => 'App\\Providers\\RouteServiceProvider',
     14 => 'Backpack\\Base\\BaseServiceProvider',
+    15 => 'Backpack\\CRUD\\CrudServiceProvider',
   ),
   'deferred' => 
   array (
