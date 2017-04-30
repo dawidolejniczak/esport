@@ -53,6 +53,7 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
             'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
+            'Spatie\\Permission\\' => 18,
             'Spatie\\DbDumper\\' => 16,
             'Spatie\\Backup\\' => 14,
         ),
@@ -119,6 +120,7 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
             'Barryvdh\\elFinderFlysystemDriver\\' => 33,
             'Barryvdh\\Elfinder\\' => 18,
             'Backpack\\Settings\\' => 18,
+            'Backpack\\PermissionManager\\' => 27,
             'Backpack\\PageManager\\' => 21,
             'Backpack\\LogManager\\' => 20,
             'Backpack\\LangFileManager\\' => 25,
@@ -207,6 +209,10 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         'Symfony\\Component\\Console\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
+        ),
+        'Spatie\\Permission\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/laravel-permission/src',
         ),
         'Spatie\\DbDumper\\' => 
         array (
@@ -340,6 +346,10 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         array (
             0 => __DIR__ . '/..' . '/backpack/settings/src',
         ),
+        'Backpack\\PermissionManager\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/backpack/permissionmanager/src',
+        ),
         'Backpack\\PageManager\\' => 
         array (
             0 => __DIR__ . '/..' . '/backpack/pagemanager/src',
@@ -452,6 +462,7 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\PageTemplates' => __DIR__ . '/../..' . '/app/PageTemplates.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -528,6 +539,16 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         'Backpack\\PageManager\\app\\Http\\Controllers\\Admin\\PageCrudController' => __DIR__ . '/..' . '/backpack/pagemanager/src/app/Http/Controllers/Admin/PageCrudController.php',
         'Backpack\\PageManager\\app\\Http\\Requests\\PageRequest' => __DIR__ . '/..' . '/backpack/pagemanager/src/app/Http/Requests/PageRequest.php',
         'Backpack\\PageManager\\app\\Models\\Page' => __DIR__ . '/..' . '/backpack/pagemanager/src/app/Models/Page.php',
+        'Backpack\\PermissionManager\\PermissionManagerServiceProvider' => __DIR__ . '/..' . '/backpack/permissionmanager/src/PermissionManagerServiceProvider.php',
+        'Backpack\\PermissionManager\\app\\Http\\Controllers\\PermissionCrudController' => __DIR__ . '/..' . '/backpack/permissionmanager/src/app/Http/Controllers/PermissionCrudController.php',
+        'Backpack\\PermissionManager\\app\\Http\\Controllers\\RoleCrudController' => __DIR__ . '/..' . '/backpack/permissionmanager/src/app/Http/Controllers/RoleCrudController.php',
+        'Backpack\\PermissionManager\\app\\Http\\Controllers\\UserCrudController' => __DIR__ . '/..' . '/backpack/permissionmanager/src/app/Http/Controllers/UserCrudController.php',
+        'Backpack\\PermissionManager\\app\\Http\\Requests\\PermissionCrudRequest' => __DIR__ . '/..' . '/backpack/permissionmanager/src/app/Http/Requests/PermissionCrudRequest.php',
+        'Backpack\\PermissionManager\\app\\Http\\Requests\\RoleCrudRequest' => __DIR__ . '/..' . '/backpack/permissionmanager/src/app/Http/Requests/RoleCrudRequest.php',
+        'Backpack\\PermissionManager\\app\\Http\\Requests\\UserStoreCrudRequest' => __DIR__ . '/..' . '/backpack/permissionmanager/src/app/Http/Requests/UserStoreCrudRequest.php',
+        'Backpack\\PermissionManager\\app\\Http\\Requests\\UserUpdateCrudRequest' => __DIR__ . '/..' . '/backpack/permissionmanager/src/app/Http/Requests/UserUpdateCrudRequest.php',
+        'Backpack\\PermissionManager\\app\\Models\\Permission' => __DIR__ . '/..' . '/backpack/permissionmanager/src/app/Models/Permission.php',
+        'Backpack\\PermissionManager\\app\\Models\\Role' => __DIR__ . '/..' . '/backpack/permissionmanager/src/app/Models/Role.php',
         'Backpack\\Settings\\SettingsServiceProvider' => __DIR__ . '/..' . '/backpack/settings/src/SettingsServiceProvider.php',
         'Backpack\\Settings\\app\\Http\\Controllers\\SettingCrudController' => __DIR__ . '/..' . '/backpack/settings/src/app/Http/Controllers/SettingCrudController.php',
         'Backpack\\Settings\\app\\Http\\Requests\\SettingRequest' => __DIR__ . '/..' . '/backpack/settings/src/app/Http/Requests/SettingRequest.php',
@@ -574,6 +595,7 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         'Collective\\Html\\HtmlBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlBuilder.php',
         'Collective\\Html\\HtmlFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlFacade.php',
         'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
+        'CreatePagesTable' => __DIR__ . '/../..' . '/database/migrations/2016_05_25_121918_create_pages_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateRevisionsTable' => __DIR__ . '/..' . '/venturecraft/revisionable/src/migrations/2013_04_09_062329_create_revisions_table.php',
         'CreateSettingsTable' => __DIR__ . '/../..' . '/database/migrations/2015_08_04_131614_create_settings_table.php',
@@ -3509,6 +3531,18 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         'Spatie\\DbDumper\\Exceptions\\CannotSetParameter' => __DIR__ . '/..' . '/spatie/db-dumper/src/Exceptions/CannotSetParameter.php',
         'Spatie\\DbDumper\\Exceptions\\CannotStartDump' => __DIR__ . '/..' . '/spatie/db-dumper/src/Exceptions/CannotStartDump.php',
         'Spatie\\DbDumper\\Exceptions\\DumpFailed' => __DIR__ . '/..' . '/spatie/db-dumper/src/Exceptions/DumpFailed.php',
+        'Spatie\\Permission\\Contracts\\Permission' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Contracts/Permission.php',
+        'Spatie\\Permission\\Contracts\\Role' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Contracts/Role.php',
+        'Spatie\\Permission\\Exceptions\\PermissionDoesNotExist' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/PermissionDoesNotExist.php',
+        'Spatie\\Permission\\Exceptions\\PermissionMustNotBeEmpty' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/PermissionMustNotBeEmpty.php',
+        'Spatie\\Permission\\Exceptions\\RoleDoesNotExist' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Exceptions/RoleDoesNotExist.php',
+        'Spatie\\Permission\\Models\\Permission' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Models/Permission.php',
+        'Spatie\\Permission\\Models\\Role' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Models/Role.php',
+        'Spatie\\Permission\\PermissionRegistrar' => __DIR__ . '/..' . '/spatie/laravel-permission/src/PermissionRegistrar.php',
+        'Spatie\\Permission\\PermissionServiceProvider' => __DIR__ . '/..' . '/spatie/laravel-permission/src/PermissionServiceProvider.php',
+        'Spatie\\Permission\\Traits\\HasPermissions' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Traits/HasPermissions.php',
+        'Spatie\\Permission\\Traits\\HasRoles' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Traits/HasRoles.php',
+        'Spatie\\Permission\\Traits\\RefreshesPermissionCache' => __DIR__ . '/..' . '/spatie/laravel-permission/src/Traits/RefreshesPermissionCache.php',
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\Command\\Command' => __DIR__ . '/..' . '/symfony/console/Command/Command.php',
         'Symfony\\Component\\Console\\Command\\HelpCommand' => __DIR__ . '/..' . '/symfony/console/Command/HelpCommand.php',

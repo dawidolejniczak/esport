@@ -37,6 +37,7 @@
     33 => 'Backpack\\Settings\\SettingsServiceProvider',
     34 => 'Cviebrock\\EloquentSluggable\\ServiceProvider',
     35 => 'Backpack\\PageManager\\PageManagerServiceProvider',
+    36 => 'Backpack\\PermissionManager\\PermissionManagerServiceProvider',
   ),
   'eager' => 
   array (
@@ -63,6 +64,7 @@
     20 => 'Backpack\\Settings\\SettingsServiceProvider',
     21 => 'Cviebrock\\EloquentSluggable\\ServiceProvider',
     22 => 'Backpack\\PageManager\\PageManagerServiceProvider',
+    23 => 'Backpack\\PermissionManager\\PermissionManagerServiceProvider',
   ),
   'deferred' => 
   array (
