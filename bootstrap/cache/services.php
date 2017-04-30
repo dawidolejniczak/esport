@@ -30,6 +30,7 @@
     26 => 'App\\Providers\\RouteServiceProvider',
     27 => 'Backpack\\Base\\BaseServiceProvider',
     28 => 'Backpack\\CRUD\\CrudServiceProvider',
+    29 => 'Backpack\\LangFileManager\\LangFileManagerServiceProvider',
   ),
   'eager' => 
   array (
@@ -49,6 +50,7 @@
     13 => 'App\\Providers\\RouteServiceProvider',
     14 => 'Backpack\\Base\\BaseServiceProvider',
     15 => 'Backpack\\CRUD\\CrudServiceProvider',
+    16 => 'Backpack\\LangFileManager\\LangFileManagerServiceProvider',
   ),
   'deferred' => 
   array (

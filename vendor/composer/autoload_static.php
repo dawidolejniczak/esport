@@ -15,8 +15,8 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
-        'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
         'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
+        'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -113,6 +113,7 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         array (
             'Barryvdh\\elFinderFlysystemDriver\\' => 33,
             'Barryvdh\\Elfinder\\' => 18,
+            'Backpack\\LangFileManager\\' => 25,
             'Backpack\\Generators\\' => 20,
             'Backpack\\CRUD\\' => 14,
             'Backpack\\Base\\' => 14,
@@ -310,6 +311,10 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         array (
             0 => __DIR__ . '/..' . '/barryvdh/laravel-elfinder/src',
         ),
+        'Backpack\\LangFileManager\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/backpack/langfilemanager/src',
+        ),
         'Backpack\\Generators\\' => 
         array (
             0 => __DIR__ . '/..' . '/backpack/generators/src',
@@ -468,6 +473,12 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         'Backpack\\Generators\\Console\\Commands\\RequestBackpackCommand' => __DIR__ . '/..' . '/backpack/generators/src/Console/Commands/RequestBackpackCommand.php',
         'Backpack\\Generators\\Console\\Commands\\ViewBackpackCommand' => __DIR__ . '/..' . '/backpack/generators/src/Console/Commands/ViewBackpackCommand.php',
         'Backpack\\Generators\\GeneratorsServiceProvider' => __DIR__ . '/..' . '/backpack/generators/src/GeneratorsServiceProvider.php',
+        'Backpack\\LangFileManager\\LangFileManagerServiceProvider' => __DIR__ . '/..' . '/backpack/langfilemanager/src/LangFileManagerServiceProvider.php',
+        'Backpack\\LangFileManager\\app\\Http\\Controllers\\LanguageCrudController' => __DIR__ . '/..' . '/backpack/langfilemanager/src/app/Http/Controllers/LanguageCrudController.php',
+        'Backpack\\LangFileManager\\app\\Http\\Requests\\LanguageRequest' => __DIR__ . '/..' . '/backpack/langfilemanager/src/app/Http/Requests/LanguageRequest.php',
+        'Backpack\\LangFileManager\\app\\Models\\Language' => __DIR__ . '/..' . '/backpack/langfilemanager/src/app/Models/Language.php',
+        'Backpack\\LangFileManager\\app\\Services\\LangFiles' => __DIR__ . '/..' . '/backpack/langfilemanager/src/app/Services/LangFiles.php',
+        'Backpack\\LangFileManager\\database\\seeds\\LanguageTableSeeder' => __DIR__ . '/..' . '/backpack/langfilemanager/src/database/seeds/LanguageTableSeeder.php',
         'Barryvdh\\Elfinder\\Connector' => __DIR__ . '/..' . '/barryvdh/laravel-elfinder/src/Connector.php',
         'Barryvdh\\Elfinder\\Console\\PublishCommand' => __DIR__ . '/..' . '/barryvdh/laravel-elfinder/src/Console/PublishCommand.php',
         'Barryvdh\\Elfinder\\Elfinder' => __DIR__ . '/..' . '/barryvdh/laravel-elfinder/src/Elfinder.php',
