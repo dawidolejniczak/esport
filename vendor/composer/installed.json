@@ -5100,5 +5100,64 @@
             "tabacitu",
             "updivision"
         ]
+    },
+    {
+        "name": "backpack/logmanager",
+        "version": "2.3.11",
+        "version_normalized": "2.3.11.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Laravel-Backpack/LogManager.git",
+            "reference": "fbd1458850a710c386b394b68c95605916d0b215"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Laravel-Backpack/LogManager/zipball/fbd1458850a710c386b394b68c95605916d0b215",
+            "reference": "fbd1458850a710c386b394b68c95605916d0b215",
+            "shasum": ""
+        },
+        "require": {
+            "backpack/base": "0.*",
+            "illuminate/support": "~5.1",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.*",
+            "scrutinizer/ocular": "~1.1"
+        },
+        "time": "2017-04-21T16:27:09+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Backpack\\LogManager\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Cristian Tabacitu",
+                "email": "hello@tabacitu.ro",
+                "homepage": "http://tabacitu.ro",
+                "role": "Developer"
+            }
+        ],
+        "description": "An interface to preview, download and delete Laravel log files.",
+        "homepage": "https://github.com/laravel-backpack/LogManager",
+        "keywords": [
+            "backpack",
+            "laravel",
+            "log interface",
+            "log manager",
+            "logs"
+        ]
     }
 ]

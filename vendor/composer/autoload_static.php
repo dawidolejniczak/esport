@@ -116,6 +116,7 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         array (
             'Barryvdh\\elFinderFlysystemDriver\\' => 33,
             'Barryvdh\\Elfinder\\' => 18,
+            'Backpack\\LogManager\\' => 20,
             'Backpack\\LangFileManager\\' => 25,
             'Backpack\\Generators\\' => 20,
             'Backpack\\CRUD\\' => 14,
@@ -323,6 +324,10 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         array (
             0 => __DIR__ . '/..' . '/barryvdh/laravel-elfinder/src',
         ),
+        'Backpack\\LogManager\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/backpack/logmanager/src',
+        ),
         'Backpack\\LangFileManager\\' => 
         array (
             0 => __DIR__ . '/..' . '/backpack/langfilemanager/src',
@@ -497,6 +502,8 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         'Backpack\\LangFileManager\\app\\Models\\Language' => __DIR__ . '/..' . '/backpack/langfilemanager/src/app/Models/Language.php',
         'Backpack\\LangFileManager\\app\\Services\\LangFiles' => __DIR__ . '/..' . '/backpack/langfilemanager/src/app/Services/LangFiles.php',
         'Backpack\\LangFileManager\\database\\seeds\\LanguageTableSeeder' => __DIR__ . '/..' . '/backpack/langfilemanager/src/database/seeds/LanguageTableSeeder.php',
+        'Backpack\\LogManager\\LogManagerServiceProvider' => __DIR__ . '/..' . '/backpack/logmanager/src/LogManagerServiceProvider.php',
+        'Backpack\\LogManager\\app\\Http\\Controllers\\LogController' => __DIR__ . '/..' . '/backpack/logmanager/src/app/Http/Controllers/LogController.php',
         'Barryvdh\\Elfinder\\Connector' => __DIR__ . '/..' . '/barryvdh/laravel-elfinder/src/Connector.php',
         'Barryvdh\\Elfinder\\Console\\PublishCommand' => __DIR__ . '/..' . '/barryvdh/laravel-elfinder/src/Console/PublishCommand.php',
         'Barryvdh\\Elfinder\\Elfinder' => __DIR__ . '/..' . '/barryvdh/laravel-elfinder/src/Elfinder.php',

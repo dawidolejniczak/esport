@@ -189,6 +189,7 @@ return [
         Spatie\Backup\BackupServiceProvider::class,
         Backpack\BackupManager\BackupManagerServiceProvider::class,
 
+        Backpack\LogManager\LogManagerServiceProvider::class,
     ],
 
     /*

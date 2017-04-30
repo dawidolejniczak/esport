@@ -88,6 +88,8 @@ return array(
     'Backpack\\LangFileManager\\app\\Models\\Language' => $vendorDir . '/backpack/langfilemanager/src/app/Models/Language.php',
     'Backpack\\LangFileManager\\app\\Services\\LangFiles' => $vendorDir . '/backpack/langfilemanager/src/app/Services/LangFiles.php',
     'Backpack\\LangFileManager\\database\\seeds\\LanguageTableSeeder' => $vendorDir . '/backpack/langfilemanager/src/database/seeds/LanguageTableSeeder.php',
+    'Backpack\\LogManager\\LogManagerServiceProvider' => $vendorDir . '/backpack/logmanager/src/LogManagerServiceProvider.php',
+    'Backpack\\LogManager\\app\\Http\\Controllers\\LogController' => $vendorDir . '/backpack/logmanager/src/app/Http/Controllers/LogController.php',
     'Barryvdh\\Elfinder\\Connector' => $vendorDir . '/barryvdh/laravel-elfinder/src/Connector.php',
     'Barryvdh\\Elfinder\\Console\\PublishCommand' => $vendorDir . '/barryvdh/laravel-elfinder/src/Console/PublishCommand.php',
     'Barryvdh\\Elfinder\\Elfinder' => $vendorDir . '/barryvdh/laravel-elfinder/src/Elfinder.php',

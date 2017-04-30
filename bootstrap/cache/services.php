@@ -33,6 +33,7 @@
     29 => 'Backpack\\LangFileManager\\LangFileManagerServiceProvider',
     30 => 'Spatie\\Backup\\BackupServiceProvider',
     31 => 'Backpack\\BackupManager\\BackupManagerServiceProvider',
+    32 => 'Backpack\\LogManager\\LogManagerServiceProvider',
   ),
   'eager' => 
   array (
@@ -55,6 +56,7 @@
     16 => 'Backpack\\LangFileManager\\LangFileManagerServiceProvider',
     17 => 'Spatie\\Backup\\BackupServiceProvider',
     18 => 'Backpack\\BackupManager\\BackupManagerServiceProvider',
+    19 => 'Backpack\\LogManager\\LogManagerServiceProvider',
   ),
   'deferred' => 
   array (
