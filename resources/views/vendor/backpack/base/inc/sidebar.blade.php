@@ -42,6 +42,9 @@
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/setting') }}"><i
                                 class="fa fa-cog"></i> <span>Settings</span></a></li>
 
+                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/page') }}"><i
+                                class="fa fa-file-o"></i> <span>Pages</span></a></li>
+
                 <!-- ======================================= -->
                 <li class="header">{{ trans('backpack::base.user') }}</li>
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/logout') }}"><i

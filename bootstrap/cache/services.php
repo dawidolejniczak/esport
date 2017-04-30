@@ -35,6 +35,8 @@
     31 => 'Backpack\\BackupManager\\BackupManagerServiceProvider',
     32 => 'Backpack\\LogManager\\LogManagerServiceProvider',
     33 => 'Backpack\\Settings\\SettingsServiceProvider',
+    34 => 'Cviebrock\\EloquentSluggable\\ServiceProvider',
+    35 => 'Backpack\\PageManager\\PageManagerServiceProvider',
   ),
   'eager' => 
   array (
@@ -59,6 +61,8 @@
     18 => 'Backpack\\BackupManager\\BackupManagerServiceProvider',
     19 => 'Backpack\\LogManager\\LogManagerServiceProvider',
     20 => 'Backpack\\Settings\\SettingsServiceProvider',
+    21 => 'Cviebrock\\EloquentSluggable\\ServiceProvider',
+    22 => 'Backpack\\PageManager\\PageManagerServiceProvider',
   ),
   'deferred' => 
   array (
