@@ -38,6 +38,7 @@
     34 => 'Cviebrock\\EloquentSluggable\\ServiceProvider',
     35 => 'Backpack\\PageManager\\PageManagerServiceProvider',
     36 => 'Backpack\\PermissionManager\\PermissionManagerServiceProvider',
+    37 => 'Backpack\\NewsCRUD\\NewsCRUDServiceProvider',
   ),
   'eager' => 
   array (
@@ -65,6 +66,7 @@
     21 => 'Cviebrock\\EloquentSluggable\\ServiceProvider',
     22 => 'Backpack\\PageManager\\PageManagerServiceProvider',
     23 => 'Backpack\\PermissionManager\\PermissionManagerServiceProvider',
+    24 => 'Backpack\\NewsCRUD\\NewsCRUDServiceProvider',
   ),
   'deferred' => 
   array (

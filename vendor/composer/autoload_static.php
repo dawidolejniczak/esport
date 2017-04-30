@@ -122,6 +122,7 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
             'Backpack\\Settings\\' => 18,
             'Backpack\\PermissionManager\\' => 27,
             'Backpack\\PageManager\\' => 21,
+            'Backpack\\NewsCRUD\\' => 18,
             'Backpack\\LogManager\\' => 20,
             'Backpack\\LangFileManager\\' => 25,
             'Backpack\\Generators\\' => 20,
@@ -354,6 +355,10 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         array (
             0 => __DIR__ . '/..' . '/backpack/pagemanager/src',
         ),
+        'Backpack\\NewsCRUD\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/backpack/newscrud/src',
+        ),
         'Backpack\\LogManager\\' => 
         array (
             0 => __DIR__ . '/..' . '/backpack/logmanager/src',
@@ -535,6 +540,16 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         'Backpack\\LangFileManager\\database\\seeds\\LanguageTableSeeder' => __DIR__ . '/..' . '/backpack/langfilemanager/src/database/seeds/LanguageTableSeeder.php',
         'Backpack\\LogManager\\LogManagerServiceProvider' => __DIR__ . '/..' . '/backpack/logmanager/src/LogManagerServiceProvider.php',
         'Backpack\\LogManager\\app\\Http\\Controllers\\LogController' => __DIR__ . '/..' . '/backpack/logmanager/src/app/Http/Controllers/LogController.php',
+        'Backpack\\NewsCRUD\\NewsCRUDServiceProvider' => __DIR__ . '/..' . '/backpack/newscrud/src/NewsCRUDServiceProvider.php',
+        'Backpack\\NewsCRUD\\app\\Http\\Controllers\\Admin\\ArticleCrudController' => __DIR__ . '/..' . '/backpack/newscrud/src/app/Http/Controllers/Admin/ArticleCrudController.php',
+        'Backpack\\NewsCRUD\\app\\Http\\Controllers\\Admin\\CategoryCrudController' => __DIR__ . '/..' . '/backpack/newscrud/src/app/Http/Controllers/Admin/CategoryCrudController.php',
+        'Backpack\\NewsCRUD\\app\\Http\\Controllers\\Admin\\TagCrudController' => __DIR__ . '/..' . '/backpack/newscrud/src/app/Http/Controllers/Admin/TagCrudController.php',
+        'Backpack\\NewsCRUD\\app\\Http\\Requests\\ArticleRequest' => __DIR__ . '/..' . '/backpack/newscrud/src/app/Http/Requests/ArticleRequest.php',
+        'Backpack\\NewsCRUD\\app\\Http\\Requests\\CategoryRequest' => __DIR__ . '/..' . '/backpack/newscrud/src/app/Http/Requests/CategoryRequest.php',
+        'Backpack\\NewsCRUD\\app\\Http\\Requests\\TagRequest' => __DIR__ . '/..' . '/backpack/newscrud/src/app/Http/Requests/TagRequest.php',
+        'Backpack\\NewsCRUD\\app\\Models\\Article' => __DIR__ . '/..' . '/backpack/newscrud/src/app/Models/Article.php',
+        'Backpack\\NewsCRUD\\app\\Models\\Category' => __DIR__ . '/..' . '/backpack/newscrud/src/app/Models/Category.php',
+        'Backpack\\NewsCRUD\\app\\Models\\Tag' => __DIR__ . '/..' . '/backpack/newscrud/src/app/Models/Tag.php',
         'Backpack\\PageManager\\PageManagerServiceProvider' => __DIR__ . '/..' . '/backpack/pagemanager/src/PageManagerServiceProvider.php',
         'Backpack\\PageManager\\app\\Http\\Controllers\\Admin\\PageCrudController' => __DIR__ . '/..' . '/backpack/pagemanager/src/app/Http/Controllers/Admin/PageCrudController.php',
         'Backpack\\PageManager\\app\\Http\\Requests\\PageRequest' => __DIR__ . '/..' . '/backpack/pagemanager/src/app/Http/Requests/PageRequest.php',
@@ -597,6 +612,7 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
         'CreatePagesTable' => __DIR__ . '/../..' . '/database/migrations/2016_05_25_121918_create_pages_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+        'CreatePermissionTables' => __DIR__ . '/../..' . '/database/migrations/2016_05_10_130540_create_permission_tables.php',
         'CreateRevisionsTable' => __DIR__ . '/..' . '/venturecraft/revisionable/src/migrations/2013_04_09_062329_create_revisions_table.php',
         'CreateSettingsTable' => __DIR__ . '/../..' . '/database/migrations/2015_08_04_131614_create_settings_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',

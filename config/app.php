@@ -190,6 +190,7 @@ return [
         Cviebrock\EloquentSluggable\ServiceProvider::class,
         Backpack\PageManager\PageManagerServiceProvider::class,
         Backpack\PermissionManager\PermissionManagerServiceProvider::class,
+        Backpack\NewsCRUD\NewsCRUDServiceProvider::class,
     ],
 
     /*
