@@ -12,9 +12,9 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         '1d1b89d124cc9cb8219922c9d5569199' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
-        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
         '0c3c22e27afa83be19b4c938f4c6e9ea' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Helpers/functions.php',
@@ -124,7 +124,6 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
             'Backpack\\PageManager\\' => 21,
             'Backpack\\NewsCRUD\\' => 18,
             'Backpack\\LogManager\\' => 20,
-            'Backpack\\LangFileManager\\' => 25,
             'Backpack\\Generators\\' => 20,
             'Backpack\\CRUD\\' => 14,
             'Backpack\\Base\\' => 14,
@@ -363,10 +362,6 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         array (
             0 => __DIR__ . '/..' . '/backpack/logmanager/src',
         ),
-        'Backpack\\LangFileManager\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/backpack/langfilemanager/src',
-        ),
         'Backpack\\Generators\\' => 
         array (
             0 => __DIR__ . '/..' . '/backpack/generators/src',
@@ -455,6 +450,8 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
     );
 
     public static $classMap = array (
+        'AddSlugToCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_24_060017_add_slug_to_categories_table.php',
+        'AddSlugToTagsTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_24_060101_add_slug_to_tags_table.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -532,12 +529,6 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         'Backpack\\Generators\\Console\\Commands\\RequestBackpackCommand' => __DIR__ . '/..' . '/backpack/generators/src/Console/Commands/RequestBackpackCommand.php',
         'Backpack\\Generators\\Console\\Commands\\ViewBackpackCommand' => __DIR__ . '/..' . '/backpack/generators/src/Console/Commands/ViewBackpackCommand.php',
         'Backpack\\Generators\\GeneratorsServiceProvider' => __DIR__ . '/..' . '/backpack/generators/src/GeneratorsServiceProvider.php',
-        'Backpack\\LangFileManager\\LangFileManagerServiceProvider' => __DIR__ . '/..' . '/backpack/langfilemanager/src/LangFileManagerServiceProvider.php',
-        'Backpack\\LangFileManager\\app\\Http\\Controllers\\LanguageCrudController' => __DIR__ . '/..' . '/backpack/langfilemanager/src/app/Http/Controllers/LanguageCrudController.php',
-        'Backpack\\LangFileManager\\app\\Http\\Requests\\LanguageRequest' => __DIR__ . '/..' . '/backpack/langfilemanager/src/app/Http/Requests/LanguageRequest.php',
-        'Backpack\\LangFileManager\\app\\Models\\Language' => __DIR__ . '/..' . '/backpack/langfilemanager/src/app/Models/Language.php',
-        'Backpack\\LangFileManager\\app\\Services\\LangFiles' => __DIR__ . '/..' . '/backpack/langfilemanager/src/app/Services/LangFiles.php',
-        'Backpack\\LangFileManager\\database\\seeds\\LanguageTableSeeder' => __DIR__ . '/..' . '/backpack/langfilemanager/src/database/seeds/LanguageTableSeeder.php',
         'Backpack\\LogManager\\LogManagerServiceProvider' => __DIR__ . '/..' . '/backpack/logmanager/src/LogManagerServiceProvider.php',
         'Backpack\\LogManager\\app\\Http\\Controllers\\LogController' => __DIR__ . '/..' . '/backpack/logmanager/src/app/Http/Controllers/LogController.php',
         'Backpack\\NewsCRUD\\NewsCRUDServiceProvider' => __DIR__ . '/..' . '/backpack/newscrud/src/NewsCRUDServiceProvider.php',
@@ -610,11 +601,15 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         'Collective\\Html\\HtmlBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlBuilder.php',
         'Collective\\Html\\HtmlFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlFacade.php',
         'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
+        'CreateArticleTagTable' => __DIR__ . '/../..' . '/database/migrations/2015_08_04_130507_create_article_tag_table.php',
+        'CreateArticlesTable' => __DIR__ . '/../..' . '/database/migrations/2015_08_04_130520_create_articles_table.php',
+        'CreateCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2015_08_04_130551_create_categories_table.php',
         'CreatePagesTable' => __DIR__ . '/../..' . '/database/migrations/2016_05_25_121918_create_pages_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreatePermissionTables' => __DIR__ . '/../..' . '/database/migrations/2016_05_10_130540_create_permission_tables.php',
         'CreateRevisionsTable' => __DIR__ . '/..' . '/venturecraft/revisionable/src/migrations/2013_04_09_062329_create_revisions_table.php',
         'CreateSettingsTable' => __DIR__ . '/../..' . '/database/migrations/2015_08_04_131614_create_settings_table.php',
+        'CreateTagsTable' => __DIR__ . '/../..' . '/database/migrations/2015_08_04_131626_create_tags_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/CronExpression.php',

@@ -27,12 +27,6 @@
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/elfinder') }}"><i
                                 class="fa fa-files-o"></i> <span>File manager</span></a></li>
 
-                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/language') }}"><i
-                                class="fa fa-flag-o"></i> <span>Languages</span></a></li>
-
-                <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/language/texts') }}"><i
-                                class="fa fa-language"></i> <span>Language Files</span></a></li>
-
                 <li><a href="{{ url(config('backpack.base.route_prefix', 'admin').'/backup') }}"><i
                                 class="fa fa-hdd-o"></i> <span>Backups</span></a></li>
 

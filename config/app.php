@@ -182,7 +182,6 @@ return [
         */
         Backpack\Base\BaseServiceProvider::class,
         Backpack\CRUD\CrudServiceProvider::class,
-        Backpack\LangFileManager\LangFileManagerServiceProvider::class,
         Spatie\Backup\BackupServiceProvider::class,
         Backpack\BackupManager\BackupManagerServiceProvider::class,
         Backpack\LogManager\LogManagerServiceProvider::class,
