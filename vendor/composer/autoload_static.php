@@ -12,12 +12,13 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         '1d1b89d124cc9cb8219922c9d5569199' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
+        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
-        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
         '0c3c22e27afa83be19b4c938f4c6e9ea' => __DIR__ . '/..' . '/spatie/laravel-backup/src/Helpers/functions.php',
+        'd9fc00ffac3dc4b7868e8efb0efdc85c' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -124,6 +125,7 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
             'Backpack\\PageManager\\' => 21,
             'Backpack\\NewsCRUD\\' => 18,
             'Backpack\\LogManager\\' => 20,
+            'Backpack\\LangFileManager\\' => 25,
             'Backpack\\Generators\\' => 20,
             'Backpack\\CRUD\\' => 14,
             'Backpack\\Base\\' => 14,
@@ -362,6 +364,10 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         array (
             0 => __DIR__ . '/..' . '/backpack/logmanager/src',
         ),
+        'Backpack\\LangFileManager\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/backpack/langfilemanager/src',
+        ),
         'Backpack\\Generators\\' => 
         array (
             0 => __DIR__ . '/..' . '/backpack/generators/src',
@@ -415,6 +421,13 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
             'LiveControl\\EloquentDataTable' => 
             array (
                 0 => __DIR__ . '/..' . '/livecontrol/eloquent-datatable/src',
+            ),
+        ),
+        'K' => 
+        array (
+            'Kris\\LaravelFormBuilder' => 
+            array (
+                0 => __DIR__ . '/..' . '/kris/laravel-form-builder/src',
             ),
         ),
         'J' => 
@@ -529,6 +542,12 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         'Backpack\\Generators\\Console\\Commands\\RequestBackpackCommand' => __DIR__ . '/..' . '/backpack/generators/src/Console/Commands/RequestBackpackCommand.php',
         'Backpack\\Generators\\Console\\Commands\\ViewBackpackCommand' => __DIR__ . '/..' . '/backpack/generators/src/Console/Commands/ViewBackpackCommand.php',
         'Backpack\\Generators\\GeneratorsServiceProvider' => __DIR__ . '/..' . '/backpack/generators/src/GeneratorsServiceProvider.php',
+        'Backpack\\LangFileManager\\LangFileManagerServiceProvider' => __DIR__ . '/..' . '/backpack/langfilemanager/src/LangFileManagerServiceProvider.php',
+        'Backpack\\LangFileManager\\app\\Http\\Controllers\\LanguageCrudController' => __DIR__ . '/..' . '/backpack/langfilemanager/src/app/Http/Controllers/LanguageCrudController.php',
+        'Backpack\\LangFileManager\\app\\Http\\Requests\\LanguageRequest' => __DIR__ . '/..' . '/backpack/langfilemanager/src/app/Http/Requests/LanguageRequest.php',
+        'Backpack\\LangFileManager\\app\\Models\\Language' => __DIR__ . '/..' . '/backpack/langfilemanager/src/app/Models/Language.php',
+        'Backpack\\LangFileManager\\app\\Services\\LangFiles' => __DIR__ . '/..' . '/backpack/langfilemanager/src/app/Services/LangFiles.php',
+        'Backpack\\LangFileManager\\database\\seeds\\LanguageTableSeeder' => __DIR__ . '/..' . '/backpack/langfilemanager/src/database/seeds/LanguageTableSeeder.php',
         'Backpack\\LogManager\\LogManagerServiceProvider' => __DIR__ . '/..' . '/backpack/logmanager/src/LogManagerServiceProvider.php',
         'Backpack\\LogManager\\app\\Http\\Controllers\\LogController' => __DIR__ . '/..' . '/backpack/logmanager/src/app/Http/Controllers/LogController.php',
         'Backpack\\NewsCRUD\\NewsCRUDServiceProvider' => __DIR__ . '/..' . '/backpack/newscrud/src/NewsCRUDServiceProvider.php',
@@ -1403,6 +1422,7 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',
+        'FormBuilderTestCase' => __DIR__ . '/..' . '/kris/laravel-form-builder/tests/FormBuilderTestCase.php',
         'GuzzleHttp\\Psr7\\AppendStream' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/AppendStream.php',
         'GuzzleHttp\\Psr7\\BufferStream' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/BufferStream.php',
         'GuzzleHttp\\Psr7\\CachingStream' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/CachingStream.php',
@@ -2329,6 +2349,33 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
         'Jenssegers\\Date\\Date' => __DIR__ . '/..' . '/jenssegers/date/src/Date.php',
         'Jenssegers\\Date\\DateServiceProvider' => __DIR__ . '/..' . '/jenssegers/date/src/DateServiceProvider.php',
+        'Kris\\LaravelFormBuilder\\Console\\FormGenerator' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/Console/FormGenerator.php',
+        'Kris\\LaravelFormBuilder\\Console\\FormMakeCommand' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/Console/FormMakeCommand.php',
+        'Kris\\LaravelFormBuilder\\Events\\AfterFieldCreation' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/Events/AfterFieldCreation.php',
+        'Kris\\LaravelFormBuilder\\Events\\AfterFormCreation' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/Events/AfterFormCreation.php',
+        'Kris\\LaravelFormBuilder\\Events\\AfterFormValidation' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/Events/AfterFormValidation.php',
+        'Kris\\LaravelFormBuilder\\Events\\BeforeFormValidation' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/Events/BeforeFormValidation.php',
+        'Kris\\LaravelFormBuilder\\Facades\\FormBuilder' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/Facades/FormBuilder.php',
+        'Kris\\LaravelFormBuilder\\Fields\\ButtonGroupType' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/Fields/ButtonGroupType.php',
+        'Kris\\LaravelFormBuilder\\Fields\\ButtonType' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/Fields/ButtonType.php',
+        'Kris\\LaravelFormBuilder\\Fields\\CheckableType' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/Fields/CheckableType.php',
+        'Kris\\LaravelFormBuilder\\Fields\\ChildFormType' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/Fields/ChildFormType.php',
+        'Kris\\LaravelFormBuilder\\Fields\\ChoiceType' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/Fields/ChoiceType.php',
+        'Kris\\LaravelFormBuilder\\Fields\\CollectionType' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/Fields/CollectionType.php',
+        'Kris\\LaravelFormBuilder\\Fields\\EntityType' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/Fields/EntityType.php',
+        'Kris\\LaravelFormBuilder\\Fields\\FormField' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/Fields/FormField.php',
+        'Kris\\LaravelFormBuilder\\Fields\\InputType' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/Fields/InputType.php',
+        'Kris\\LaravelFormBuilder\\Fields\\ParentType' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/Fields/ParentType.php',
+        'Kris\\LaravelFormBuilder\\Fields\\RepeatedType' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/Fields/RepeatedType.php',
+        'Kris\\LaravelFormBuilder\\Fields\\SelectType' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/Fields/SelectType.php',
+        'Kris\\LaravelFormBuilder\\Fields\\StaticType' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/Fields/StaticType.php',
+        'Kris\\LaravelFormBuilder\\Fields\\TextareaType' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/Fields/TextareaType.php',
+        'Kris\\LaravelFormBuilder\\Form' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/Form.php',
+        'Kris\\LaravelFormBuilder\\FormBuilder' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/FormBuilder.php',
+        'Kris\\LaravelFormBuilder\\FormBuilderServiceProvider' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/FormBuilderServiceProvider.php',
+        'Kris\\LaravelFormBuilder\\FormBuilderTrait' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/FormBuilderTrait.php',
+        'Kris\\LaravelFormBuilder\\FormHelper' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/FormHelper.php',
+        'Kris\\LaravelFormBuilder\\RulesParser' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/RulesParser.php',
         'Laracasts\\Generators\\Commands\\MigrationMakeCommand' => __DIR__ . '/..' . '/laracasts/generators/src/Commands/MigrationMakeCommand.php',
         'Laracasts\\Generators\\Commands\\PivotMigrationMakeCommand' => __DIR__ . '/..' . '/laracasts/generators/src/Commands/PivotMigrationMakeCommand.php',
         'Laracasts\\Generators\\Commands\\SeedMakeCommand' => __DIR__ . '/..' . '/laracasts/generators/src/Commands/SeedMakeCommand.php',
@@ -4070,6 +4117,7 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         'Symfony\\Component\\Yaml\\Unescaper' => __DIR__ . '/..' . '/symfony/yaml/Unescaper.php',
         'Symfony\\Component\\Yaml\\Yaml' => __DIR__ . '/..' . '/symfony/yaml/Yaml.php',
         'Symfony\\Polyfill\\Mbstring\\Mbstring' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/Mbstring.php',
+        'TestModel' => __DIR__ . '/..' . '/kris/laravel-form-builder/tests/FormBuilderTestCase.php',
         'Tests\\CreatesApplication' => __DIR__ . '/../..' . '/tests/CreatesApplication.php',
         'Tests\\Feature\\ExampleTest' => __DIR__ . '/../..' . '/tests/Feature/ExampleTest.php',
         'Tests\\TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',

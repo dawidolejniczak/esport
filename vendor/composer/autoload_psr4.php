@@ -62,6 +62,7 @@ return array(
     'Backpack\\PageManager\\' => array($vendorDir . '/backpack/pagemanager/src'),
     'Backpack\\NewsCRUD\\' => array($vendorDir . '/backpack/newscrud/src'),
     'Backpack\\LogManager\\' => array($vendorDir . '/backpack/logmanager/src'),
+    'Backpack\\LangFileManager\\' => array($vendorDir . '/backpack/langfilemanager/src'),
     'Backpack\\Generators\\' => array($vendorDir . '/backpack/generators/src'),
     'Backpack\\CRUD\\' => array($vendorDir . '/backpack/crud/src'),
     'Backpack\\Base\\' => array($vendorDir . '/backpack/base/src'),

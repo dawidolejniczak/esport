@@ -15,6 +15,7 @@
         "backpack/pagemanager": "^1.1",
         "backpack/permissionmanager": "^2.1",
         "backpack/settings": "^2.0",
+        "kris/laravel-form-builder": "^1.11",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0"
     },
