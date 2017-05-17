@@ -68,7 +68,7 @@ class Article extends Model
 
     public function games()
     {
-        return $this->belongsToMany('App\Model\Game', 'article_game');
+        return $this->belongsToMany('App\Models\Game', 'article_game');
     }
 
     /*
