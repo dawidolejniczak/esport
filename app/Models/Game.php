@@ -35,6 +35,11 @@ class Game extends Model
     |--------------------------------------------------------------------------
     */
 
+    public function articles()
+    {
+        return $this->hasMany('Backpack\NewsCRUD\app\Models\Article');
+    }
+
     /*
     |--------------------------------------------------------------------------
     | SCOPES
