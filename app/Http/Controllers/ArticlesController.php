@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Game;
 use Illuminate\Http\Request;
 
-class ArticleController extends Controller
+class ArticlesController extends Controller
 {
     public function index()
     {
