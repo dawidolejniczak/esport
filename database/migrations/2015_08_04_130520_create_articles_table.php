@@ -19,9 +19,10 @@ class CreateArticlesTable extends Migration
             $table->string('slug')->default('');
             $table->text('content');
             $table->string('image')->nullable();
-            $table->enum('status', ['PUBLISHED', 'DRAFT'])->default('PUBLISHED');
+            $table->enum('status', ['Hot', 'Queue'])->default('Hot');
+            $table->string('youTube');
+            $table->string('embeddedCode');
             $table->date('date');
-            $table->boolean('featured')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

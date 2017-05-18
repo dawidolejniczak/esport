@@ -127,10 +127,26 @@ class ArticleCrudController extends CrudController
             'label' => 'Status',
             'type' => 'enum',
         ]);
-        $this->crud->addField([    // CHECKBOX
-            'name' => 'featured',
-            'label' => 'Featured item',
-            'type' => 'checkbox',
+
+        $this->crud->addField([    // LINK
+            'name' => 'link',
+            'label' => 'Link',
+            'type' => 'text',
+            'placeholder' => 'Your Link here',
+        ]);
+
+        $this->crud->addField([    // YOUTUBE
+            'name' => 'youTube',
+            'label' => 'YouTube',
+            'type' => 'text',
+            'placeholder' => 'Your Link here',
+        ]);
+
+        $this->crud->addField([    // Embed Code
+            'name' => 'embeddedCode',
+            'label' => 'Embed Code',
+            'type' => 'text',
+            'placeholder' => 'Your Link here',
         ]);
 
         $this->crud->enableAjaxTable();
