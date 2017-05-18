@@ -9,10 +9,6 @@ class ArticleController extends Controller
 {
     public function index()
     {
-        $games = Game::all();
-
-        return view('welcome',[
-            'games' => $games
-        ]);
+        return view('welcome');
     }
 }
