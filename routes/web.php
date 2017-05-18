@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ArticleController@index');
 
 Route::group([
     'prefix' => config('backpack.base.route_prefix', 'admin'),
