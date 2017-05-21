@@ -193,7 +193,13 @@ return [
         /*
          *  Form Builder
          */
-        Kris\LaravelFormBuilder\FormBuilderServiceProvider::class
+        Kris\LaravelFormBuilder\FormBuilderServiceProvider::class,
+
+        /*
+         *  Repository
+         */
+
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
     ],
 
     /*

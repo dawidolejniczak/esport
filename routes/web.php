@@ -13,6 +13,8 @@
 
 Route::get('/', 'ArticlesController@index');
 
+Route::get('test', 'ArticlesController@form');
+
 Route::group([
     'prefix' => config('backpack.base.route_prefix', 'admin'),
     'middleware' => ['admin'],
@@ -21,3 +23,5 @@ Route::group([
     // your CRUD resources and other admin routes here
     CRUD::resource('game', 'GameCrudController');
 });
+
+Route::resource('posts', PostsController::class);
