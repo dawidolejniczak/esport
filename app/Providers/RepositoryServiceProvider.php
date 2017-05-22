@@ -27,7 +27,5 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $this->app->bind(PostRepository::class, PostRepositoryEloquent::class);
         //:end-bindings:
-
-        $this->app->register(RepositoryServiceProvider::class);
     }
 }
