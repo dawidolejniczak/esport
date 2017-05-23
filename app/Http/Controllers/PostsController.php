@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\PostForm;
+use App\Forms\PostForm;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -42,7 +42,7 @@ class PostsController extends Controller
      * 
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\JsonResponse|\Illuminate\View\View
      */
-    public function index(FormBuilder $formBuilder)
+    public function index()
     {
         $this->repository->pushCriteria(app('Prettus\Repository\Criteria\RequestCriteria'));
         $posts = $this->repository->all();
@@ -54,18 +54,17 @@ class PostsController extends Controller
             ]);
         }
 
-        $form = $formBuilder->create(PostForm::class, [
-            'method' => 'POST',
-            'url' => route('song.store')
-        ]);
-
-
         return view('posts.index', compact('posts'));
     }
 
-    public function form()
+    public function create(FormBuilder $formBuilder)
     {
-        return view('posts.form');
+        $form = $formBuilder->create(PostForm::class, [
+            'method' => 'POST',
+            'url' => route('posts.store'),
+            'template' => 'layouts.posts.form'
+        ]);
+        return view('posts.create', compact('form'));
     }
 
     /**

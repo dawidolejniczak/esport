@@ -9,7 +9,12 @@ class PostValidator extends LaravelValidator
 {
 
     protected $rules = [
-        ValidatorInterface::RULE_CREATE => [],
+        ValidatorInterface::RULE_CREATE => [
+            'tile' => 'required|min:10',
+            'image' => 'required',
+            'youTube' => 'nullable',
+            'embeddedCode' => 'nullable'
+        ],
         ValidatorInterface::RULE_UPDATE => [],
    ];
 }

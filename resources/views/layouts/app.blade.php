@@ -13,7 +13,7 @@
             crossorigin="anonymous"></script>
     <script src="/js/main.js"></script>
 </head>
-<body>
+<body @if(Request::is('posts/create')) class="add" @endif>
 <header>
     <div class="container-fluid">
         <div class="row">
@@ -26,7 +26,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#"><img src="/img/logo.png" alt="esport"></a>
+                    <a class="navbar-brand" href="/"><img src="/img/logo.png" alt="esport"></a>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
