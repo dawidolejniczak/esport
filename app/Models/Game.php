@@ -35,9 +35,9 @@ class Game extends Model
     |--------------------------------------------------------------------------
     */
 
-    public function articles()
+    public function posts()
     {
-        return $this->hasMany('Backpack\NewsCRUD\app\Models\Article');
+        return $this->belongsToMany(Post::class);
     }
 
     /*

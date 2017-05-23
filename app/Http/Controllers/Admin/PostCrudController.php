@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Game;
 use App\Models\Post;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
@@ -49,6 +50,16 @@ class PostCrudController extends CrudController
             'name' => 'status',
             'label' => 'Status',
             'type' => 'enum',
+        ]);
+
+        $this->crud->addField([       // Select2Multiple = n-n relationship (with pivot table)
+            'label' => 'Games',
+            'type' => 'select2_multiple',
+            'name' => 'games', // the method that defines the relationship in your Model
+            'entity' => 'games', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => Game::class, // foreign key model
+            'pivot' => true, // on create&update, do you need to add/delete pivot table entries?
         ]);
 
         $this->crud->addField([    // YOUTUBE

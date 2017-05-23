@@ -26,6 +26,7 @@ class RepositoryServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(PostRepository::class, PostRepositoryEloquent::class);
+        $this->app->bind(\App\Repositories\GameRepository::class, \App\Repositories\GameRepositoryEloquent::class);
         //:end-bindings:
     }
 }
