@@ -57,6 +57,8 @@
                     <a href="#"><i class="fa fa-newspaper-o"></i> <span>News</span> <i
                                 class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
+                        <li><a href="{{ url('admin/post') }}"><i class="fa fa-newspaper-o"></i> <span>Posts</span></a>
+                        </li>
                         <li><a href="{{ url('admin/article') }}"><i class="fa fa-newspaper-o"></i> <span>Articles</span></a>
                         </li>
                         <li><a href="{{ url('admin/category') }}"><i class="fa fa-list"></i> <span>Categories</span></a>

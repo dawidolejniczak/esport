@@ -19,7 +19,7 @@ class Post extends Model
     //protected $primaryKey = 'id';
     // public $timestamps = false;
     // protected $guarded = ['id'];
-    // protected $fillable = [];
+    protected $fillable = ['title', 'image', 'youTube', 'embeddedCode', 'status'];
     // protected $hidden = [];
     // protected $dates = [];
 

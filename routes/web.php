@@ -22,4 +22,13 @@ Route::group([
     CRUD::resource('game', 'GameCrudController');
 });
 
+Route::group([
+    'prefix' => config('backpack.base.route_prefix', 'admin'),
+    'middleware' => ['admin'],
+    'namespace' => 'Admin'
+], function() {
+    // your CRUD resources and other admin routes here
+    CRUD::resource('post', 'PostCrudController');
+});
+
 Route::resource('posts', PostsController::class);
