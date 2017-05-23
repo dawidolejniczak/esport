@@ -123,6 +123,7 @@ class MySqlSchemaManager extends AbstractSchemaManager
         $scale = null;
         $precision = null;
 
+        $this->_platform->registerDoctrineTypeMapping('enum', 'string');
         $type = $this->_platform->getDoctrineTypeMapping($dbType);
 
         // In cases where not connected to a database DESCRIBE $table does not return 'Comment'
