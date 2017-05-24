@@ -11,24 +11,30 @@ class PostForm extends Form
     {
         $this
             ->add('title', 'text', [
-                'label' => 'Title'
+                'label' => 'Title',
+                'attr' => [
+                    'placeholder' => 'Some Title',
+                ]
             ])
-            ->add('image', 'image')
+            ->add('image', 'file', [
+                'attr' => [
+                    'accept' => 'image/*'
+                ]
+            ])
             ->add('youTube', 'text', [
                 'label' => 'Youtube'
             ])
             ->add('embeddedCode', 'text', [
                 'label' => 'Embedded code (twitch, oddshot etc.)'
+            ])
+            ->add('games', 'checkbox', [
+                'template' => 'layouts.posts.checkboxes'
+            ])
+            ->add('submit', 'submit', [
+                'label' => 'Add now',
+                'attr' => [
+                    'class' => 'btn btn-go'
+                ]
             ]);
-
-        $games = Game::all(); // TODO Repository
-
-        foreach ($games as $game) {
-            $this
-                ->add('game' . $game->id, 'checkbox', [
-                    'value' => $game->id,
-                    'label' => $game->name
-                ]);
-        }
     }
 }

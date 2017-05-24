@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Models\Game;
+use App\Entities\Game;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -15,6 +15,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer('layouts.filters', function ($view) {
+            $view->with('games',
+                Game::all()
+            );
+        });
+
+        view()->composer('layouts.posts.checkboxes', function ($view) {
             $view->with('games',
                 Game::all()
             );

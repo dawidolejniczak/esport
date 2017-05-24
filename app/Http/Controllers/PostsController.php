@@ -62,7 +62,7 @@ class PostsController extends Controller
         $form = $formBuilder->create(PostForm::class, [
             'method' => 'POST',
             'url' => route('posts.store'),
-            'template' => 'layouts.posts.form'
+            'class' => 'add-game col-sm-offset-3 col-sm-6 col-xs-12'
         ]);
         return view('posts.create', compact('form'));
     }
