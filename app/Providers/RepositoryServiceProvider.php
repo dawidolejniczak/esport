@@ -2,8 +2,6 @@
 
 namespace App\Providers;
 
-use App\Repositories\PostRepository;
-use App\Repositories\PostRepositoryEloquent;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -25,7 +23,7 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(PostRepository::class, PostRepositoryEloquent::class);
+        $this->app->bind(\App\Repositories\PostRepository::class, \App\Repositories\PostRepositoryEloquent::class);
         $this->app->bind(\App\Repositories\GameRepository::class, \App\Repositories\GameRepositoryEloquent::class);
         //:end-bindings:
     }
