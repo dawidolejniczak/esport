@@ -10,5 +10,5 @@ use Prettus\Repository\Contracts\RepositoryInterface;
  */
 interface GameRepository extends RepositoryInterface
 {
-    //
+    public function all($columns = ['*']);
 }

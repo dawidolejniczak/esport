@@ -5,12 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use Prettus\Validator\Contracts\ValidatorInterface;
-use Prettus\Validator\Exceptions\ValidatorException;
+use Prettus\Repository\Criteria\RequestCriteria;
 use App\Http\Requests\GameCreateRequest;
 use App\Http\Requests\GameUpdateRequest;
 use App\Repositories\GameRepository;
-use App\Validators\GameValidator;
 
 
 class GamesController extends Controller
@@ -21,15 +19,9 @@ class GamesController extends Controller
      */
     protected $repository;
 
-    /**
-     * @var GameValidator
-     */
-    protected $validator;
-
-    public function __construct(GameRepository $repository, GameValidator $validator)
+    public function __construct(GameRepository $repository)
     {
         $this->repository = $repository;
-        $this->validator  = $validator;
     }
 
 
@@ -40,7 +32,7 @@ class GamesController extends Controller
      */
     public function index()
     {
-        $this->repository->pushCriteria(app('Prettus\Repository\Criteria\RequestCriteria'));
+        $this->repository->pushCriteria(app(RequestCriteria::class));
         $games = $this->repository->all();
 
         if (request()->wantsJson()) {
@@ -63,33 +55,20 @@ class GamesController extends Controller
     public function store(GameCreateRequest $request)
     {
 
-        try {
+        $game = $this->repository->create($request->all());
 
-            $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_CREATE);
+        $response = [
+            'message' => 'Game created.',
+            'data' => $game->toArray(),
+        ];
 
-            $game = $this->repository->create($request->all());
+        if ($request->wantsJson()) {
 
-            $response = [
-                'message' => 'Game created.',
-                'data'    => $game->toArray(),
-            ];
-
-            if ($request->wantsJson()) {
-
-                return response()->json($response);
-            }
-
-            return redirect()->back()->with('message', $response['message']);
-        } catch (ValidatorException $e) {
-            if ($request->wantsJson()) {
-                return response()->json([
-                    'error'   => true,
-                    'message' => $e->getMessageBag()
-                ]);
-            }
-
-            return redirect()->back()->withErrors($e->getMessageBag())->withInput();
+            return response()->json($response);
         }
+
+
+        return redirect()->back();
     }
 
 
@@ -135,42 +114,26 @@ class GamesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  GameUpdateRequest $request
-     * @param  string            $id
+     * @param  string $id
      *
      * @return Response
      */
     public function update(GameUpdateRequest $request, $id)
     {
+        $game = $this->repository->update($request->all(), $id);
 
-        try {
+        $response = [
+            'message' => 'Game updated.',
+            'data' => $game->toArray(),
+        ];
 
-            $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_UPDATE);
+        if ($request->wantsJson()) {
 
-            $game = $this->repository->update($request->all(), $id);
-
-            $response = [
-                'message' => 'Game updated.',
-                'data'    => $game->toArray(),
-            ];
-
-            if ($request->wantsJson()) {
-
-                return response()->json($response);
-            }
-
-            return redirect()->back()->with('message', $response['message']);
-        } catch (ValidatorException $e) {
-
-            if ($request->wantsJson()) {
-
-                return response()->json([
-                    'error'   => true,
-                    'message' => $e->getMessageBag()
-                ]);
-            }
-
-            return redirect()->back()->withErrors($e->getMessageBag())->withInput();
+            return response()->json($response);
         }
+
+        return redirect()->back();
+
     }
 
 

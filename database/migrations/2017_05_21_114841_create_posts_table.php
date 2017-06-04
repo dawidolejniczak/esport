@@ -15,8 +15,8 @@ class CreatePostsTable extends Migration
 	{
 		Schema::create('posts', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
-            $table->binary('image')->nullable();
+            $table->string('title', 100)->unique();
+            $table->binary('image');
             $table->enum('status', ['Hot', 'Queue'])->default('Queue');
             $table->string('youTube')->nullable();
             $table->string('embeddedCode')->nullable();

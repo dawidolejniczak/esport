@@ -4,18 +4,6 @@
         <a href=""><img src="/img/banner-fb.jpg" alt=""></a>
     </div>
     <div class="box">
-        <h2>Top 5 quizes</h2>
-        <ul>
-            <li>Lorem ipsum dolor et sit ament un
-                lorem ipsum et dolor un
-            </li>
-            <li>One line question?</li>
-            <li>Die or not die?</li>
-            <li>5 best games ever. Find details.</li>
-            <li>One line question?</li>
-        </ul>
-    </div>
-    <div class="box">
         <a href="#"><img src="http://lorempixel.com/300/300/" alt=""></a>
     </div>
     <div class="box">

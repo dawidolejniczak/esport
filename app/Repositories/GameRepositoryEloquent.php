@@ -6,7 +6,6 @@ use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
 use App\Repositories\GameRepository;
 use App\Entities\Game;
-use App\Validators\GameValidator;
 
 /**
  * Class GameRepositoryEloquent
@@ -23,18 +22,6 @@ class GameRepositoryEloquent extends BaseRepository implements GameRepository
     {
         return Game::class;
     }
-
-    /**
-    * Specify Validator class name
-    *
-    * @return mixed
-    */
-    public function validator()
-    {
-
-        return GameValidator::class;
-    }
-
 
     /**
      * Boot up the repository, pushing criteria

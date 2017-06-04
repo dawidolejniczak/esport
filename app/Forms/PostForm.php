@@ -2,7 +2,6 @@
 
 namespace App\Forms;
 
-use App\Models\Game;
 use Kris\LaravelFormBuilder\Form;
 
 class PostForm extends Form
@@ -12,11 +11,13 @@ class PostForm extends Form
         $this
             ->add('title', 'text', [
                 'label' => 'Title',
+                'rules' => 'required|min:5|unique:posts,title',
                 'attr' => [
                     'placeholder' => 'Some Title',
                 ]
             ])
             ->add('image', 'file', [
+                'rules' => 'required',
                 'attr' => [
                     'accept' => 'image/*'
                 ]

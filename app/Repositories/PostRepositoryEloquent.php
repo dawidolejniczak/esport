@@ -6,7 +6,6 @@ use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
 use App\Repositories\PostRepository;
 use App\Entities\Post;
-use App\Validators\PostValidator;
 
 /**
  * Class PostRepositoryEloquent
@@ -23,18 +22,6 @@ class PostRepositoryEloquent extends BaseRepository implements PostRepository
     {
         return Post::class;
     }
-
-    /**
-    * Specify Validator class name
-    *
-    * @return mixed
-    */
-    public function validator()
-    {
-
-        return PostValidator::class;
-    }
-
 
     /**
      * Boot up the repository, pushing criteria

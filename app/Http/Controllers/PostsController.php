@@ -2,17 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Criteria\HotCriteria;
+use App\Criteria\QueueCriteria;
 use App\Forms\PostForm;
+use App\Repositories\GameRepository;
+use Backpack\Settings\app\Models\Setting;
+use Image;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use Kris\LaravelFormBuilder\FormBuilder;
+use Prettus\Repository\Criteria\RequestCriteria;
 use Prettus\Validator\Contracts\ValidatorInterface;
 use Prettus\Validator\Exceptions\ValidatorException;
 use App\Http\Requests\PostCreateRequest;
 use App\Http\Requests\PostUpdateRequest;
 use App\Repositories\PostRepository;
-use App\Validators\PostValidator;
 
 
 class PostsController extends Controller
@@ -23,48 +27,53 @@ class PostsController extends Controller
      */
     protected $repository;
 
-    /**
-     * @var PostValidator
-     */
-    protected $validator;
-
-    public function __construct(PostRepository $repository, PostValidator $validator)
+    public function __construct(PostRepository $repository)
     {
         $this->repository = $repository;
-        $this->validator  = $validator;
     }
 
-
     /**
-     * @param FormBuilder $formBuilder
-     * 
-     * Display all Posts
-     * 
+     * Display all Hot Posts
+     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\JsonResponse|\Illuminate\View\View
      */
     public function index()
     {
-        $this->repository->pushCriteria(app('Prettus\Repository\Criteria\RequestCriteria'));
-        $posts = $this->repository->all();
-
-        if (request()->wantsJson()) {
-
-            return response()->json([
-                'data' => $posts,
-            ]);
-        }
-
-        return view('posts.index', compact('posts'));
+        $this->repository->pushCriteria(HotCriteria::class);
+        $posts = $this->repository->paginate(10);
+        return view('posts.hot', compact('posts'));
     }
+
+    /**
+     * Display all Posts in Queue
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function queue()
+    {
+        $pagination = Setting::where('key', 'pagination')->first();
+        $this->repository->pushCriteria(QueueCriteria::class);
+        $this->repository->pushCriteria(app(RequestCriteria::class));
+        $posts = $this->repository->paginate($pagination->value);
+        return view('posts.queue', compact('posts'));
+    }
+
+    /**
+     * Form to non-admin && admin user
+     *
+     * @param FormBuilder $formBuilder
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
 
     public function create(FormBuilder $formBuilder)
     {
-        $form = $formBuilder->create(PostForm::class, [
-            'method' => 'POST',
-            'url' => route('posts.store'),
-            'class' => 'add-game col-sm-offset-3 col-sm-6 col-xs-12'
+        $games = app(GameRepository::class)->all();
+        $form = $formBuilder->create(PostForm::class);
+        return view('posts.create', [
+            'form' => $form,
+            'games' => $games
         ]);
-        return view('posts.create', compact('form'));
     }
 
     /**
@@ -76,34 +85,26 @@ class PostsController extends Controller
      */
     public function store(PostCreateRequest $request)
     {
+        $image = $request->file('image');
+        $fileName = $request->title . '.' . $image->getClientOriginalExtension();
+        $location = public_path('uploads\\' . $fileName);
+        Image::make($image)->resize(700, 400)->save($location);
 
-        try {
+        $post = $this->repository->create([
+            'title' => $request->title,
+            'image' => $fileName,
+            'youTube' => $request->youTube,
+            'embeddedCode' => $request->embeddedCode
+        ]);
 
-            $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_CREATE);
+        $this->repository->sync($post->id, 'games', $request->game);
 
-            $post = $this->repository->create($request->all());
+        $response = [
+            'message' => 'Post created.',
+            'data' => $post->toArray(),
+        ];
 
-            $response = [
-                'message' => 'Post created.',
-                'data'    => $post->toArray(),
-            ];
-
-            if ($request->wantsJson()) {
-
-                return response()->json($response);
-            }
-
-            return redirect()->back()->with('message', $response['message']);
-        } catch (ValidatorException $e) {
-            if ($request->wantsJson()) {
-                return response()->json([
-                    'error'   => true,
-                    'message' => $e->getMessageBag()
-                ]);
-            }
-
-            return redirect()->back()->withErrors($e->getMessageBag())->withInput();
-        }
+        return redirect()->back()->with('message', $response['message']);
     }
 
 
@@ -149,7 +150,7 @@ class PostsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  PostUpdateRequest $request
-     * @param  string            $id
+     * @param  string $id
      *
      * @return Response
      */
@@ -164,7 +165,7 @@ class PostsController extends Controller
 
             $response = [
                 'message' => 'Post updated.',
-                'data'    => $post->toArray(),
+                'data' => $post->toArray(),
             ];
 
             if ($request->wantsJson()) {
@@ -178,7 +179,7 @@ class PostsController extends Controller
             if ($request->wantsJson()) {
 
                 return response()->json([
-                    'error'   => true,
+                    'error' => true,
                     'message' => $e->getMessageBag()
                 ]);
             }

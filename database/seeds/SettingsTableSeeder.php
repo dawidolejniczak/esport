@@ -16,41 +16,20 @@ class SettingsTableSeeder extends Seeder
     {
         DB::table('settings')->insert([
             'key'           => 'contact_email',
-            'name'          => 'Contact form email address',
-            'description'   => 'The email address that all emails from the contact form will go to.',
+            'name'          => 'Contact - email address',
+            'description'   => 'The contact email will be visible in footer.',
             'value'         => 'admin@updivision.com',
             'field'         => '{"name":"value","label":"Value","type":"email"}',
             'active'        => 1,
         ]);
 
         DB::table('settings')->insert([
-            'key'           => 'contact_cc',
-            'name'          => 'Contact form CC field',
-            'description'   => 'Email adresses separated by comma, to be included as CC in the email sent by the contact form.',
-            'value'         => '',
-            'field'         => '{"name":"value","label":"Value","type":"email"}',
+            'key'           => 'pagination',
+            'name'          => 'Numbers of news on page',
+            'description'   => 'Numbers of news on page',
+            'value'         => 3,
+            'field'         => '{"name":"value","label":"Value", "title":"Numbers of news on page" ,"type":"number"}',
             'active'        => 1,
-
-        ]);
-
-        DB::table('settings')->insert([
-            'key'           => 'contact_bcc',
-            'name'          => 'Contact form BCC field',
-            'description'   => 'Email adresses separated by comma, to be included as BCC in the email sent by the contact form.',
-            'value'         => '',
-            'field'         => '{"name":"value","label":"Value","type":"email"}',
-            'active'        => 1,
-
-        ]);
-
-        DB::table('settings')->insert([
-            'key'           => 'motto',
-            'name'          => 'Motto',
-            'description'   => 'Website motto',
-            'value'         => 'this is the value',
-            'field'         => '{"name":"value","label":"Value", "title":"Motto value" ,"type":"textarea"}',
-            'active'        => 1,
-
         ]);
     }
 }

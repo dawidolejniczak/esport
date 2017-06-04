@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Entities\Game;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
@@ -18,7 +19,7 @@ class GameCrudController extends CrudController
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\Game');
+        $this->crud->setModel(Game::class);
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/game');
         $this->crud->setEntityNameStrings('game', 'games');
 

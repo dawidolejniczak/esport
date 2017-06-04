@@ -10,8 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', 'ArticlesController@index');
+Route::get('/', 'PostsController@index');
 
 Route::group([
     'prefix' => config('backpack.base.route_prefix', 'admin'),
@@ -32,3 +31,11 @@ Route::group([
 });
 
 Route::resource('posts', PostsController::class);
+Route::get('queue', 'PostsController@queue')->name('queue');
+
+
+Auth::routes();
+
+Route::get('/redirect', 'SocialAuthController@redirect');
+Route::get('/callback', 'SocialAuthController@callback');
+

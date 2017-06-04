@@ -20,4 +20,13 @@ class Post extends Model implements Transformable
         'date'
     ];
 
+    protected $fieldSearchable = [
+        'games.id',
+        'title'
+    ];
+
+    public function games()
+    {
+        return $this->belongsToMany(Game::class);
+    }
 }
