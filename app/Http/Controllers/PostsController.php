@@ -83,8 +83,13 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(PostCreateRequest $request)
+    public function store(PostCreateRequest $request, FormBuilder $formBuilder)
     {
+        $form = $formBuilder->create(PostForm::class);
+        if (!$form->isValid()) {
+            return redirect()->back()->withErrors($form->getErrors())->withInput();
+        }
+
         $image = $request->file('image');
         $fileName = $request->title . '.' . $image->getClientOriginalExtension();
         $location = public_path('uploads\\' . $fileName);
