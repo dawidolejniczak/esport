@@ -11,10 +11,7 @@ class PostForm extends Form
         $this
             ->add('title', 'text', [
                 'label' => 'Title',
-                'rules' => 'required|min:5|unique:posts,title',
-                'attr' => [
-                    'placeholder' => 'Some Title',
-                ]
+                'rules' => 'required|min:5|max:100|unique:posts,title',
             ])
             ->add('image', 'file', [
                 'rules' => 'required',

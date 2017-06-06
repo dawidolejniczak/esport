@@ -13,7 +13,7 @@
             crossorigin="anonymous"></script>
     <script src="/js/main.js"></script>
 </head>
-<body @if(Request::is('posts/create')) class="add" @endif>
+<body @if(Request::is('posts/create') || Request::is('users/create') || Request::is('myprofile')) class="add" @endif>
 <header>
     <div class="container-fluid">
         <div class="row">
@@ -45,7 +45,7 @@
                                     <span class="hidden-xs">{{ Auth::user()->name }}</span>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="dLabel">
-                                    <li><a href="">My profile</a></li>
+                                    <li><a href="{{ route('myProfile') }}">My profile</a></li>
                                     <li><a href="{{ route('logout') }}">Logout</a></li>
                                 </ul>
                             </li>
@@ -67,7 +67,7 @@
                                             <li><input type="submit" class="btn" value="Register"></li>
                                         </ul>
                                         <a href="#">
-                                            <img src="img/login-fb.png" alt="">
+                                            <img src="/img/login-fb.png" alt="">
                                         </a>
                                     </form>
                                 </div>
@@ -90,7 +90,7 @@
                                             </li>
                                         </ul>
                                         <a href="{{ asset('redirect') }}">
-                                            <img src="img/login-fb.png" alt="">
+                                            <img src="/img/login-fb.png" alt="">
                                         </a>
                                     </form>
                                 </div>

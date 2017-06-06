@@ -13,6 +13,8 @@
 
 Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::post('login', '\App\Http\Controllers\Auth\LoginController@login');
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
 
 Route::get('/redirect', 'SocialAuthController@redirect');
 Route::get('/callback', 'SocialAuthController@callback');
@@ -37,6 +39,13 @@ Route::group([
     CRUD::resource('post', 'PostCrudController');
 });
 
-Route::resource('posts', PostsController::class);
+Route::resource('posts', PostsController::class, ['only' => [
+    'show', 'index', 'store', 'create'
+]]);
 Route::get('queue', 'PostsController@queue')->name('queue');
+
+Route::resource('users', UsersController::class, ['only' => [
+    'store', 'create', 'update'
+]]);
+Route::get('myprofile', 'UsersController@edit')->name('myProfile');
 

@@ -13,8 +13,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Kris\LaravelFormBuilder\FormBuilder;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Prettus\Validator\Contracts\ValidatorInterface;
-use Prettus\Validator\Exceptions\ValidatorException;
 use App\Http\Requests\PostCreateRequest;
 use App\Http\Requests\PostUpdateRequest;
 use App\Repositories\PostRepository;
