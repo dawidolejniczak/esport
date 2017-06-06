@@ -57,13 +57,13 @@
                                     <span class="hidden-xs">Register</span>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dLabel">
-                                    <form action="">
+                                    <form action="{{ route('register') }}" method="post">
                                         {{ csrf_field() }}
                                         <ul>
-                                            <li><input type="text" placeholder="Login"></li>
-                                            <li><input type="text" placeholder="Email"></li>
-                                            <li><input type="text" placeholder="Password"></li>
-                                            <li><input type="text" placeholder="Password"></li>
+                                            <li><input type="text" name="name" placeholder="Login"></li>
+                                            <li><input type="text" name="email" placeholder="Email"></li>
+                                            <li><input type="password" name="password" placeholder="Password"></li>
+                                            <li><input type="password" name="password_confirm" placeholder="Password"></li>
                                             <li><input type="submit" class="btn" value="Register"></li>
                                         </ul>
                                         <a href="#">
@@ -83,10 +83,10 @@
                                         {{ csrf_field() }}
                                         <ul>
                                             <li><input type="text" name="email" placeholder="Email"></li>
-                                            <li><input type="text" name="password" placeholder="Password"></li>
+                                            <li><input type="password" name="password" placeholder="Password"></li>
                                             <li>
                                                 <a href="{{ route('password.request') }}">Forgot password?</a>
-                                                <a href="" class="btn">Login</a>
+                                                <button class="btn">Login</button>
                                             </li>
                                         </ul>
                                         <a href="{{ asset('redirect') }}">

@@ -185,17 +185,17 @@ body > header {
         }
         &.hot {
           &:before {
-            background-image: url(../img/icons/star.png);
+            background-image: url(/img/icons/star.png);
           }
         }
         &.queue {
           &:before {
-            background-image: url(../img/icons/send.png);
+            background-image: url(/img/icons/send.png);
           }
         }
         &.add {
           &:before {
-            background-image: url(../img/icons/check.png);
+            background-image: url(/img/icons/check.png);
           }
         }
         a {
@@ -250,7 +250,7 @@ body > header {
           > a {
             padding-bottom: 10px;
           }
-          input[type="text"] {
+          input[type="text"], input[type="password"] {
             max-width: 210px;
             width: 100%;
             padding: 0 15px;

@@ -10,6 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Auth::routes();
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+Route::get('/redirect', 'SocialAuthController@redirect');
+Route::get('/callback', 'SocialAuthController@callback');
+
 Route::get('/', 'PostsController@index');
 
 Route::group([
@@ -32,10 +39,4 @@ Route::group([
 
 Route::resource('posts', PostsController::class);
 Route::get('queue', 'PostsController@queue')->name('queue');
-
-
-Auth::routes();
-
-Route::get('/redirect', 'SocialAuthController@redirect');
-Route::get('/callback', 'SocialAuthController@callback');
 

@@ -175,7 +175,6 @@ return [
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
 
         /*
         * Backpack Service Providers...
@@ -190,6 +189,9 @@ return [
         Backpack\PageManager\PageManagerServiceProvider::class,
         Backpack\PermissionManager\PermissionManagerServiceProvider::class,
         Backpack\NewsCRUD\NewsCRUDServiceProvider::class,
+
+        App\Providers\RouteServiceProvider::class,
+
         /*
          *  Form Builder
          */

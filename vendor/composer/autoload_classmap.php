@@ -205,6 +205,7 @@ return array(
     'CreatePermissionTables' => $baseDir . '/database/migrations/2016_05_10_130540_create_permission_tables.php',
     'CreatePostsTable' => $baseDir . '/database/migrations/2017_05_21_114841_create_posts_table.php',
     'CreateRevisionsTable' => $vendorDir . '/venturecraft/revisionable/src/migrations/2013_04_09_062329_create_revisions_table.php',
+    'CreateSessionsTable' => $baseDir . '/database/migrations/2017_06_05_214907_create_sessions_table.php',
     'CreateSettingsTable' => $baseDir . '/database/migrations/2015_08_04_131614_create_settings_table.php',
     'CreateSocialAccountsTable' => $baseDir . '/database/migrations/2017_06_04_190223_create_social_accounts_table.php',
     'CreateTableArticleGame' => $baseDir . '/database/migrations/2017_05_17_165326_create_table_article_game.php',
