@@ -7,6 +7,7 @@ use App\Criteria\QueueCriteria;
 use App\Forms\PostForm;
 use App\Repositories\GameRepository;
 use Backpack\Settings\app\Models\Setting;
+use Carbon\Carbon;
 use Image;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -93,13 +94,14 @@ class PostsController extends Controller
         $image = $request->file('image');
         $fileName = $request->title . '.' . $image->getClientOriginalExtension();
         $location = public_path('uploads\\' . $fileName);
-        Image::make($image)->resize(700, 400)->save($location);
+        Image::make($image)->resize(863, 486)->save($location);
 
         $post = $this->repository->create([
             'title' => $request->title,
             'image' => $fileName,
             'youTube' => $request->youTube,
-            'embeddedCode' => $request->embeddedCode
+            'embeddedCode' => $request->embeddedCode,
+            'date' => Carbon::now()
         ]);
 
         $this->repository->sync($post->id, 'games', $request->game);
