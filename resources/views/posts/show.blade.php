@@ -10,6 +10,16 @@
                         <div class="photo">
                             <a href=""><img src="{{ asset('uploads/' . $post->image) }}" alt="{{ $post->title }}"></a>
                         </div>
+                        @if(isset($youTube))
+                            <div style="margin-top: 20px">
+                                {!! $youTube !!}
+                            </div>
+                        @endif
+                        @if(isset($embed))
+                            <div style="margin-top: 20px">
+                                {!! $embed !!}
+                            </div>
+                        @endif
                         <a href="/" class="btn btn-go">Go to main page</a>
                         <div class="fb-comments" data-href="{{ route('posts.show', $post->id) }}" data-numposts="5"></div>
                     </article>

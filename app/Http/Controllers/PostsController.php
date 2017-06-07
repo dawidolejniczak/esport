@@ -8,6 +8,7 @@ use App\Forms\PostForm;
 use App\Repositories\GameRepository;
 use Backpack\Settings\app\Models\Setting;
 use Carbon\Carbon;
+use Cohensive\Embed\Facades\Embed;
 use Image;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -92,7 +93,7 @@ class PostsController extends Controller
         $image = $request->file('image');
         $fileName = $request->title . '.' . $image->getClientOriginalExtension();
         $location = public_path('uploads\\' . $fileName);
-        Image::make($image)->resize(863, 486)->save($location);
+        Image::make($image)->resize(710, 486)->save($location);
 
         $post = $this->repository->create([
             'title' => $request->title,
@@ -123,6 +124,17 @@ class PostsController extends Controller
     public function show($id)
     {
         $post = $this->repository->find($id);
+        $youTube = Embed::make($post->youTube)->parseUrl();
+        if ($youTube) {
+            $youTube->setAttribute(['width' => 710]);
+            $youTube = $youTube->getHtml();
+        }
+
+        $embed = Embed::make($post->embeddedCode)->parseUrl();
+        if ($embed) {
+            $embed->setAttribute(['width' => 710]);
+            $embed = $embed->getHtml();
+        }
 
         if (request()->wantsJson()) {
 
@@ -131,7 +143,11 @@ class PostsController extends Controller
             ]);
         }
 
-        return view('posts.show', compact('post'));
+        return view('posts.show', [
+            'post' => $post,
+            'youTube' => $youTube,
+            'embed' => $embed
+            ]);
     }
 
 

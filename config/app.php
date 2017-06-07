@@ -204,6 +204,11 @@ return [
          *  Socialite
          */
         Laravel\Socialite\SocialiteServiceProvider::class,
+
+        /*
+         * Embedded Code
+         */
+        Cohensive\Embed\EmbedServiceProvider::class,
     ],
 
     /*
@@ -254,6 +259,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'FormBuilder' => Kris\LaravelFormBuilder\Facades\FormBuilder::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'Embed' => Cohensive\Embed\Facades\Embed::class
     ],
 
 ];

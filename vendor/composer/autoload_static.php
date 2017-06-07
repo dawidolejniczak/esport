@@ -487,6 +487,13 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
                 0 => __DIR__ . '/..' . '/doctrine/collections/lib',
             ),
         ),
+        'C' => 
+        array (
+            'Cohensive\\Embed' => 
+            array (
+                0 => __DIR__ . '/..' . '/cohensive/embed/src',
+            ),
+        ),
     );
 
     public static $classMap = array (
@@ -659,6 +666,10 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         'Cocur\\Slugify\\RuleProvider\\RuleProviderInterface' => __DIR__ . '/..' . '/cocur/slugify/src/RuleProvider/RuleProviderInterface.php',
         'Cocur\\Slugify\\Slugify' => __DIR__ . '/..' . '/cocur/slugify/src/Slugify.php',
         'Cocur\\Slugify\\SlugifyInterface' => __DIR__ . '/..' . '/cocur/slugify/src/SlugifyInterface.php',
+        'Cohensive\\Embed\\Embed' => __DIR__ . '/..' . '/cohensive/embed/src/Cohensive/Embed/Embed.php',
+        'Cohensive\\Embed\\EmbedServiceProvider' => __DIR__ . '/..' . '/cohensive/embed/src/Cohensive/Embed/EmbedServiceProvider.php',
+        'Cohensive\\Embed\\Facades\\Embed' => __DIR__ . '/..' . '/cohensive/embed/src/Cohensive/Embed/Facades/Embed.php',
+        'Cohensive\\Embed\\Factory' => __DIR__ . '/..' . '/cohensive/embed/src/Cohensive/Embed/Factory.php',
         'Collective\\Html\\Componentable' => __DIR__ . '/..' . '/laravelcollective/html/src/Componentable.php',
         'Collective\\Html\\Eloquent\\FormAccessible' => __DIR__ . '/..' . '/laravelcollective/html/src/Eloquent/FormAccessible.php',
         'Collective\\Html\\FormBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/FormBuilder.php',
