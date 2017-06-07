@@ -131,7 +131,6 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
             'Backpack\\Settings\\' => 18,
             'Backpack\\PermissionManager\\' => 27,
             'Backpack\\PageManager\\' => 21,
-            'Backpack\\NewsCRUD\\' => 18,
             'Backpack\\LogManager\\' => 20,
             'Backpack\\LangFileManager\\' => 25,
             'Backpack\\Generators\\' => 20,
@@ -388,10 +387,6 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         array (
             0 => __DIR__ . '/..' . '/backpack/pagemanager/src',
         ),
-        'Backpack\\NewsCRUD\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/backpack/newscrud/src',
-        ),
         'Backpack\\LogManager\\' => 
         array (
             0 => __DIR__ . '/..' . '/backpack/logmanager/src',
@@ -495,8 +490,6 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
     );
 
     public static $classMap = array (
-        'AddSlugToCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_24_060017_add_slug_to_categories_table.php',
-        'AddSlugToTagsTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_24_060101_add_slug_to_tags_table.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Criteria\\HotCriteria' => __DIR__ . '/../..' . '/app/Criteria/HotCriteria.php',
         'App\\Criteria\\QueueCriteria' => __DIR__ . '/../..' . '/app/Criteria/QueueCriteria.php',
@@ -612,16 +605,6 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         'Backpack\\LangFileManager\\database\\seeds\\LanguageTableSeeder' => __DIR__ . '/..' . '/backpack/langfilemanager/src/database/seeds/LanguageTableSeeder.php',
         'Backpack\\LogManager\\LogManagerServiceProvider' => __DIR__ . '/..' . '/backpack/logmanager/src/LogManagerServiceProvider.php',
         'Backpack\\LogManager\\app\\Http\\Controllers\\LogController' => __DIR__ . '/..' . '/backpack/logmanager/src/app/Http/Controllers/LogController.php',
-        'Backpack\\NewsCRUD\\NewsCRUDServiceProvider' => __DIR__ . '/..' . '/backpack/newscrud/src/NewsCRUDServiceProvider.php',
-        'Backpack\\NewsCRUD\\app\\Http\\Controllers\\Admin\\ArticleCrudController' => __DIR__ . '/..' . '/backpack/newscrud/src/app/Http/Controllers/Admin/ArticleCrudController.php',
-        'Backpack\\NewsCRUD\\app\\Http\\Controllers\\Admin\\CategoryCrudController' => __DIR__ . '/..' . '/backpack/newscrud/src/app/Http/Controllers/Admin/CategoryCrudController.php',
-        'Backpack\\NewsCRUD\\app\\Http\\Controllers\\Admin\\TagCrudController' => __DIR__ . '/..' . '/backpack/newscrud/src/app/Http/Controllers/Admin/TagCrudController.php',
-        'Backpack\\NewsCRUD\\app\\Http\\Requests\\ArticleRequest' => __DIR__ . '/..' . '/backpack/newscrud/src/app/Http/Requests/ArticleRequest.php',
-        'Backpack\\NewsCRUD\\app\\Http\\Requests\\CategoryRequest' => __DIR__ . '/..' . '/backpack/newscrud/src/app/Http/Requests/CategoryRequest.php',
-        'Backpack\\NewsCRUD\\app\\Http\\Requests\\TagRequest' => __DIR__ . '/..' . '/backpack/newscrud/src/app/Http/Requests/TagRequest.php',
-        'Backpack\\NewsCRUD\\app\\Models\\Article' => __DIR__ . '/..' . '/backpack/newscrud/src/app/Models/Article.php',
-        'Backpack\\NewsCRUD\\app\\Models\\Category' => __DIR__ . '/..' . '/backpack/newscrud/src/app/Models/Category.php',
-        'Backpack\\NewsCRUD\\app\\Models\\Tag' => __DIR__ . '/..' . '/backpack/newscrud/src/app/Models/Tag.php',
         'Backpack\\PageManager\\PageManagerServiceProvider' => __DIR__ . '/..' . '/backpack/pagemanager/src/PageManagerServiceProvider.php',
         'Backpack\\PageManager\\app\\Http\\Controllers\\Admin\\PageCrudController' => __DIR__ . '/..' . '/backpack/pagemanager/src/app/Http/Controllers/Admin/PageCrudController.php',
         'Backpack\\PageManager\\app\\Http\\Requests\\PageRequest' => __DIR__ . '/..' . '/backpack/pagemanager/src/app/Http/Requests/PageRequest.php',
@@ -682,9 +665,6 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         'Collective\\Html\\HtmlBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlBuilder.php',
         'Collective\\Html\\HtmlFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlFacade.php',
         'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
-        'CreateArticleTagTable' => __DIR__ . '/../..' . '/database/migrations/2015_08_04_130507_create_article_tag_table.php',
-        'CreateArticlesTable' => __DIR__ . '/../..' . '/database/migrations/2015_08_04_130520_create_articles_table.php',
-        'CreateCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2015_08_04_130551_create_categories_table.php',
         'CreateGamePostTable' => __DIR__ . '/../..' . '/database/migrations/2017_05_23_205112_create_game_post_table.php',
         'CreateGamesTable' => __DIR__ . '/../..' . '/database/migrations/2017_05_23_202904_create_games_table.php',
         'CreatePagesTable' => __DIR__ . '/../..' . '/database/migrations/2016_05_25_121918_create_pages_table.php',
@@ -693,8 +673,7 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         'CreatePostsTable' => __DIR__ . '/../..' . '/database/migrations/2017_05_21_114841_create_posts_table.php',
         'CreateRevisionsTable' => __DIR__ . '/..' . '/venturecraft/revisionable/src/migrations/2013_04_09_062329_create_revisions_table.php',
         'CreateSettingsTable' => __DIR__ . '/../..' . '/database/migrations/2015_08_04_131614_create_settings_table.php',
-        'CreateTableArticleGame' => __DIR__ . '/../..' . '/database/migrations/2017_05_17_165326_create_table_article_game.php',
-        'CreateTagsTable' => __DIR__ . '/../..' . '/database/migrations/2015_08_04_131626_create_tags_table.php',
+        'CreateSocialAccountsTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_04_190223_create_social_accounts_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/CronExpression.php',
@@ -3136,6 +3115,7 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         'PHP_Token_YIELD_FROM' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'Parsedown' => __DIR__ . '/..' . '/erusev/parsedown/Parsedown.php',
         'ParsedownTest' => __DIR__ . '/..' . '/erusev/parsedown/test/ParsedownTest.php',
+        'PermissionsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/PermissionsTableSeeder.php',
         'PhpParser\\Autoloader' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Autoloader.php',
         'PhpParser\\Builder' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/Builder.php',
         'PhpParser\\BuilderAbstract' => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser/BuilderAbstract.php',
@@ -3673,6 +3653,7 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         'Ramsey\\Uuid\\UuidFactoryInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidFactoryInterface.php',
         'Ramsey\\Uuid\\UuidInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidInterface.php',
         'RecursiveCallbackFilterIterator' => __DIR__ . '/..' . '/studio-42/elfinder/php/elFinderVolumeLocalFileSystem.class.php',
+        'RolesTableSeeder' => __DIR__ . '/../..' . '/database/seeds/RolesTableSeeder.php',
         'SebastianBergmann\\CodeCoverage\\CodeCoverage' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage.php',
         'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
         'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Driver/Driver.php',

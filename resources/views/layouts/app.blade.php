@@ -57,13 +57,13 @@
                                     <span class="hidden-xs">Register</span>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dLabel">
-                                    <form action="{{ route('register') }}" method="post">
+                                    <form action="{{ route('users.store') }}" method="post">
                                         {{ csrf_field() }}
                                         <ul>
                                             <li><input type="text" name="name" placeholder="Login"></li>
                                             <li><input type="text" name="email" placeholder="Email"></li>
                                             <li><input type="password" name="password" placeholder="Password"></li>
-                                            <li><input type="password" name="password_confirm" placeholder="Password">
+                                            <li><input type="password" name="password_confirmation" placeholder="Password">
                                             </li>
                                             <li><input type="submit" class="btn" value="Register"></li>
                                         </ul>

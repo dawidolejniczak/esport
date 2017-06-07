@@ -87,6 +87,8 @@ class UsersController extends Controller
             'password' => bcrypt($request->password),
         ]);
 
+        $user->assignRole('user');
+
         $response = [
             'message' => 'User created.',
             'data' => $user->toArray(),

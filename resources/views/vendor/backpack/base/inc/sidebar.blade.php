@@ -59,12 +59,7 @@
                     <ul class="treeview-menu">
                         <li><a href="{{ url('admin/post') }}"><i class="fa fa-newspaper-o"></i> <span>Posts</span></a>
                         </li>
-                        <li><a href="{{ url('admin/article') }}"><i class="fa fa-newspaper-o"></i> <span>Articles</span></a>
-                        </li>
-                        <li><a href="{{ url('admin/category') }}"><i class="fa fa-list"></i> <span>Categories</span></a>
-                        </li>
                         <li><a href="{{ url('admin/game') }}"><i class="fa fa-gamepad"></i> <span>Games</span></a></li>
-                        <li><a href="{{ url('admin/tag') }}"><i class="fa fa-tag"></i> <span>Tags</span></a></li>
                     </ul>
                 </li>
 

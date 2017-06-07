@@ -65,7 +65,7 @@ class PostsController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
 
-    public function create(FormBuilder $formBuilder)
+    public function create(FormBuilder $formBuilder, PostCreateRequest $request)
     {
         $games = app(GameRepository::class)->all();
         $form = $formBuilder->create(PostForm::class);

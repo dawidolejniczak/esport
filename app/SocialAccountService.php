@@ -36,6 +36,8 @@ class SocialAccountService
                     'name' => $providerUser->getName(),
                     'image' => $fileName
                 ]);
+
+                $user->assignRole('user');
             }
 
             $account->user()->associate($user);
