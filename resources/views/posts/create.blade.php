@@ -1,18 +1,10 @@
 @extends('layouts.app')
 @section('content')
-    @if (count($errors) > 0)
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
     <main>
         <div class="container-fluid">
             <div class="row">
-                <form id="add" method="post" action="{{ route('posts.store') }}" class="add-game col-sm-offset-3 col-sm-6 col-xs-12" enctype="multipart/form-data">
+                <form id="add" method="post" action="{{ route('posts.store') }}"
+                      class="add-game col-sm-offset-3 col-sm-6 col-xs-12" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="fieldset">
                         <div class="tab add">Add</div>

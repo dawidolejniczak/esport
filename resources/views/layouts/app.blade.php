@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="stylesheet" media="all" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('vendor/backpack/pnotify/pnotify.custom.min.css') }}">
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"
             integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
@@ -63,7 +64,8 @@
                                             <li><input type="text" name="name" placeholder="Login"></li>
                                             <li><input type="text" name="email" placeholder="Email"></li>
                                             <li><input type="password" name="password" placeholder="Password"></li>
-                                            <li><input type="password" name="password_confirmation" placeholder="Password">
+                                            <li><input type="password" name="password_confirmation"
+                                                       placeholder="Password">
                                             </li>
                                             <li><input type="submit" class="btn" value="Register"></li>
                                         </ul>
@@ -139,6 +141,9 @@
     }(document, "script", "twitter-wjs"));
 </script>
 @include('layouts.filters')
+<div>
+    @include('layouts.alerts')
+</div>
 @yield('content')
 @include('layouts.footer')
 </body>
