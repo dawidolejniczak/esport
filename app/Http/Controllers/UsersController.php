@@ -119,11 +119,9 @@ class UsersController extends Controller
 
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
+     * Edit My Profile
+     * @param FormBuilder $formBuilder
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit(FormBuilder $formBuilder)
     {
@@ -144,19 +142,35 @@ class UsersController extends Controller
      *
      * @return Response
      */
-    public function update(UserUpdateRequest $request, $id)
+    public function update(UserUpdateRequest $request, $id, FormBuilder $formBuilder)
     {
-        $user = $this->repository->update($request->all(), $id);
+
+        $form = $formBuilder->create(UserForm::class);
+        if (!$form->isValid()) {
+            return redirect()->back()->withErrors($form->getErrors())->withInput();
+        }
+
+        if ($request->image) {
+            $image = $request->file('image');
+            $fileName = $request->name . Carbon::now() . '.' . $image->getClientOriginalExtension();
+            $location = public_path('uploads\\' . $fileName);
+            Image::make($image)->resize(50, 50)->save($location);
+        } else {
+            $fileName = NULL;
+        }
+
+
+        $user = $this->repository->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'image' => $fileName,
+            'password' => bcrypt($request->password),
+        ], $id);
 
         $response = [
             'message' => 'User updated.',
             'data' => $user->toArray(),
         ];
-
-        if ($request->wantsJson()) {
-
-            return response()->json($response);
-        }
 
         return redirect()->back()->with('message', $response['message']);
     }

@@ -66,7 +66,7 @@
                                             <li><input type="password" name="password_confirm" placeholder="Password"></li>
                                             <li><input type="submit" class="btn" value="Register"></li>
                                         </ul>
-                                        <a href="#">
+                                        <a href="{{ asset('redirect') }}">
                                             <img src="/img/login-fb.png" alt="">
                                         </a>
                                     </form>
@@ -90,7 +90,7 @@
                                             </li>
                                         </ul>
                                         <a href="{{ asset('redirect') }}">
-                                            <img src="/img/login-fb.png" alt="">
+                                            <img src="/img/login-fb.png" alt="Facebook Login">
                                         </a>
                                     </form>
                                 </div>
