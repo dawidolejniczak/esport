@@ -20,18 +20,19 @@ class UserForm extends Form
             ])
             ->add('email', 'text', [
                 'label' => 'Email',
-                'rules' => 'required|string|email|max:255|unique:users',
+                'rules' => 'required|string|email|max:255',
             ])
             ->add('password', 'password', [
                 'label' => 'Password',
                 'rules' => 'required|string|min:6|confirmed',
+                'value' => ''
             ])
             ->add('password_confirmation', 'password', [
                 'label' => 'Password Confirmation',
-                'rules' => 'required|string|min:6'
+                'rules' => 'required|string|min:6',
             ])
             ->add('submit', 'submit', [
-                'label' => 'Register',
+                'label' => 'Continue',
                 'attr' => [
                     'class' => 'btn btn-go'
                 ]

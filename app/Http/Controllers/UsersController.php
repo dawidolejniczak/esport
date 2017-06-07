@@ -128,10 +128,11 @@ class UsersController extends Controller
     public function edit(FormBuilder $formBuilder)
     {
         $user = $this->repository->find(Auth::user()->id);
-        $form = $formBuilder->create(UserForm::class);
-        return view('users.create', [
+        $form = $formBuilder->create(UserForm::class, [
+            'model' => $user
+        ]);
+        return view('users.edit', [
             'form' => $form,
-            'model' => $user,
         ]);
     }
 
@@ -146,7 +147,6 @@ class UsersController extends Controller
      */
     public function update(UserUpdateRequest $request, $id, FormBuilder $formBuilder)
     {
-
         $form = $formBuilder->create(UserForm::class);
         if (!$form->isValid()) {
             return redirect()->back()->withErrors($form->getErrors())->withInput();
@@ -154,7 +154,7 @@ class UsersController extends Controller
 
         if ($request->image) {
             $image = $request->file('image');
-            $fileName = $request->name . Carbon::now() . '.' . $image->getClientOriginalExtension();
+            $fileName = $request->name . str_replace([':', '-'], '', Carbon::now()) . '.' . $image->getClientOriginalExtension();
             $location = public_path('uploads\\' . $fileName);
             Image::make($image)->resize(50, 50)->save($location);
         } else {
@@ -174,7 +174,7 @@ class UsersController extends Controller
             'data' => $user->toArray(),
         ];
 
-        return redirect()->back()->with('message', $response['message']);
+        return redirect()->route('posts.index')->with('message', $response['message']);
     }
 
 
