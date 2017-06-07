@@ -5,7 +5,7 @@
             <div class="row">
                 <section class="articles col-md-8 col-sm-12 col-xs-12">
                     <div class="tab"><a href="" class="hot">Hot</a></div>
-                    @include('posts.index')
+                    @include('posts.post')
                     {{ $posts->links() }}
                 </section>
                 @include('layouts.sidebar')
