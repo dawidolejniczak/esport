@@ -20,6 +20,24 @@ All Notable changes to `Backpack CRUD` will be documented in this file
 - Nothing
 
 
+## [3.2.12] - 2017-05-31
+
+### Added
+- Latvian translation files (thanks to [Erik Bonder](https://github.com/erik-ropez));
+- Russian translation files (thanks to [Aleksei Budaev](https://a-budaev.ru/));
+- Dutch translation files (thanks to [Jelmer Visser](https://github.com/jelmervisser))
+
+### Fixed
+- allow for revisions by non-logged-in users; fixes #566;
+- upgraded Select2 to the latest version, in all select2 fields;
+- fixed select2_from_ajax_multiple;
+- translated "edit translations" button;
+- localize the filters navbar view;
+- inline validation error for array fields;
+- moved button initialization to CrudPanel constructor;
+- pagelength bug; undoes PR #596;
+
+
 ## [3.2.11] - 2017-04-21
 
 ### Removed
@@ -33,6 +51,7 @@ All Notable changes to `Backpack CRUD` will be documented in this file
 ### Fixed
 - select_multiple has allows_null option;
 - details_row for AjaxDataTables;
+
 
 ## [3.2.9] - 2017-04-20
 

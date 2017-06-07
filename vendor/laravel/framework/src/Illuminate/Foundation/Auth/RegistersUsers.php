@@ -17,7 +17,7 @@ trait RegistersUsers
      */
     public function showRegistrationForm()
     {
-        return redirect()->route('users.create');
+        return view('auth.register');
     }
 
     /**
