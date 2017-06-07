@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Entities\User;
 use App\Forms\UserForm;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
@@ -70,12 +71,12 @@ class UsersController extends Controller
             return redirect()->back()->withErrors($form->getErrors())->withInput();
         }
 
-        if($request->image){
+        if ($request->image) {
             $image = $request->file('image');
-            $fileName = $request->title . '.' . $image->getClientOriginalExtension();
+            $fileName = $request->name . Carbon::now() . '.' . $image->getClientOriginalExtension();
             $location = public_path('uploads\\' . $fileName);
             Image::make($image)->resize(50, 50)->save($location);
-        }else {
+        } else {
             $fileName = NULL;
         }
 
@@ -145,19 +146,19 @@ class UsersController extends Controller
      */
     public function update(UserUpdateRequest $request, $id)
     {
-            $user = $this->repository->update($request->all(), $id);
+        $user = $this->repository->update($request->all(), $id);
 
-            $response = [
-                'message' => 'User updated.',
-                'data' => $user->toArray(),
-            ];
+        $response = [
+            'message' => 'User updated.',
+            'data' => $user->toArray(),
+        ];
 
-            if ($request->wantsJson()) {
+        if ($request->wantsJson()) {
 
-                return response()->json($response);
-            }
+            return response()->json($response);
+        }
 
-            return redirect()->back()->with('message', $response['message']);
+        return redirect()->back()->with('message', $response['message']);
     }
 
 

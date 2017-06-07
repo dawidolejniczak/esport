@@ -2,7 +2,9 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Laravel\Socialite\Contracts\User as ProviderUser;
+use Image;
 
 class SocialAccountService
 {
@@ -22,12 +24,17 @@ class SocialAccountService
             ]);
 
             $user = User::whereEmail($providerUser->getEmail())->first();
-
-            if (!$user) {
+            if (!$user)
+            {
+                $image = $providerUser->getAvatar();
+                $fileName = $providerUser->getName() . Carbon::now()->toDateString() . '.' . 'png';
+                $location = public_path('uploads\\' . $fileName);
+                Image::make($image)->resize(50, 50)->save($location);
 
                 $user = User::create([
                     'email' => $providerUser->getEmail(),
                     'name' => $providerUser->getName(),
+                    'image' => $fileName
                 ]);
             }
 
