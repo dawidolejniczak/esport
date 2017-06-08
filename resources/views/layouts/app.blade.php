@@ -39,11 +39,14 @@
                     </ul>
                     <ul class="user">
                         @if (!Auth::guest())
+                            <li class="hidden-xs">
+                                <a href="#">Hi, {{ Auth::user()->name }}</a>
+                            </li>
                             <li class="dropdown">
                                 <a href="#" id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true"
                                    aria-expanded="false">
                                     <i class="visible-xs fa fa-user" aria-hidden="true"></i>
-                                    <span class="hidden-xs">{{ Auth::user()->name }}</span>
+                                    <span class="hidden-xs">My Profile</span>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="dLabel">
                                     <li><a href="{{ route('myProfile') }}">My profile</a></li>
