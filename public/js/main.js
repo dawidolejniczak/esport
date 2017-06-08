@@ -23,16 +23,33 @@ var EsportApp = window.EsportApp = window.EsportApp || {};
 
     $(document).on('ready', EsportApp.init);
     $(document).ready(function () {
-        var i = $("input[name='games[]']:checked").length;
-        $(".counter").find("span").text(i);
-        $(".games-number").change(function () {
-            if (this.checked) {
-                i++;
-                $(".counter").find("span").text(i);
-            }else {
-                i--;
-                $(".counter").find("span").text(i);
-            }
+        $(".gamesToCheck").change(function () {
+            var link = '?search=';
+            var label = '';
+            $(".gamesToCheck:checked").each(function () {
+                label = $("label[for='"+$(this).attr('id')+"']").text();
+                link += 'games.name:' + label + ';and|';
+            });
+            window.location = link;
         });
+
+        var checkboxValues = JSON.parse(localStorage.getItem('checkboxValues')) || {},
+            $checkboxes = $(".gamesToCheck");
+
+        $checkboxes.on("change", function(){
+            $checkboxes.each(function(){
+                checkboxValues[this.id] = this.checked;
+            });
+
+            localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
+        });
+
+        // On page load
+        $.each(checkboxValues, function(key, value) {
+            $("#" + key).prop('checked', value);
+        });
+
+        var i = $('input[type="checkbox"]:checked').length;
+        $(".counter").find("span").text(i);
     });
 })(window.jQuery);

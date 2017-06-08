@@ -30,4 +30,8 @@ class PostRepositoryEloquent extends BaseRepository implements PostRepository
     {
         $this->pushCriteria(app(RequestCriteria::class));
     }
+
+    protected $fieldSearchable = [
+        'games.name',
+    ];
 }

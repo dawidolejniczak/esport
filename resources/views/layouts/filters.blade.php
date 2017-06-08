@@ -14,7 +14,7 @@
                     <form action="">
                         <ul>
                             @foreach($games as $game)
-                            <li><input type="checkbox" class="games-number" name="game[]" id="game{{ $game->id }}" value="{{ $game->id }}"><label for="game{{ $game->id }}">{{ $game->name }}</label></li>
+                            <li><input type="checkbox" class="gamesToCheck" name="game[]" id="game{{ $game->id }}" value="{{ $game->id }}"><label for="game{{ $game->id }}">{{ $game->name }}</label></li>
                             @endforeach
                         </ul>
                     </form>
