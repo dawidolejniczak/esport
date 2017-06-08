@@ -25,7 +25,7 @@ Route::group([
     'prefix' => config('backpack.base.route_prefix', 'admin'),
     'middleware' => ['admin'],
     'namespace' => 'Admin'
-], function() {
+], function () {
     // your CRUD resources and other admin routes here
     CRUD::resource('game', 'GameCrudController');
 });
@@ -34,7 +34,7 @@ Route::group([
     'prefix' => config('backpack.base.route_prefix', 'admin'),
     'middleware' => ['admin'],
     'namespace' => 'Admin'
-], function() {
+], function () {
     // your CRUD resources and other admin routes here
     CRUD::resource('post', 'PostCrudController');
 });
@@ -42,10 +42,11 @@ Route::group([
 Route::resource('posts', PostsController::class, ['only' => [
     'show', 'index', 'store', 'create'
 ]]);
+
 Route::get('queue', 'PostsController@queue')->name('queue');
 
 Route::resource('users', UsersController::class, ['only' => [
     'store', 'create', 'update'
 ]]);
-Route::get('myprofile', 'UsersController@edit')->name('myProfile');
 
+Route::get('myprofile', 'UsersController@edit')->name('myProfile');

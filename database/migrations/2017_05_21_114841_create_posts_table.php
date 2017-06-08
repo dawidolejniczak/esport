@@ -20,7 +20,7 @@ class CreatePostsTable extends Migration
             $table->enum('status', ['Hot', 'Queue'])->default('Queue');
             $table->string('youTube')->nullable();
             $table->string('embeddedCode')->nullable();
-            $table->date('date');
+            $table->dateTime('date');
             $table->softDeletes();
             $table->timestamps();
 		});

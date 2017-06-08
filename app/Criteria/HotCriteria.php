@@ -21,7 +21,7 @@ class HotCriteria implements CriteriaInterface
      */
     public function apply($model, RepositoryInterface $repository)
     {
-        $model = $model->where('status', 'Hot');
+        $model = $model->where('status', 'Hot')->orderBy('date', 'desc');
         return $model;
     }
 }

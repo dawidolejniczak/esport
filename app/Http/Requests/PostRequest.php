@@ -25,7 +25,7 @@ class PostRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
     public function rules()
     {
         return [
-            'title' => 'required|min:10|max:255',
+            'title' => 'required|min:5|max:255',
             'image' => 'required',
             'status' => 'required'
         ];

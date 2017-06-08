@@ -18,7 +18,7 @@ class SettingsTableSeeder extends Seeder
             'key'           => 'contact_email',
             'name'          => 'Contact - email address',
             'description'   => 'The contact email will be visible in footer.',
-            'value'         => 'admin@updivision.com',
+            'value'         => 'info@gmatkowski.pl',
             'field'         => '{"name":"value","label":"Value","type":"email"}',
             'active'        => 1,
         ]);

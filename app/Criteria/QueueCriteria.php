@@ -21,7 +21,8 @@ class QueueCriteria implements CriteriaInterface
      */
     public function apply($model, RepositoryInterface $repository)
     {
-        $model = $model->where('status', 'Queue');
+
+        $model = $model->where('status', 'Queue')->orderBy('date', 'desc');
         return $model;
     }
 }
