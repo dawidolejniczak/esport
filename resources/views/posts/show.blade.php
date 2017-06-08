@@ -21,7 +21,7 @@
                             </div>
                         @endif
                         <a href="/" class="btn btn-go">Go to main page</a>
-                        <div class="fb-comments" data-href="{{ route('posts.show', $post->id) }}" data-numposts="5"></div>
+                        <div class="fb-comments" data-width="710" data-href="{{ route('posts.show', $post->id) }}" data-numposts="5"></div>
                     </article>
                 </section>
                 @include('layouts.sidebar')
