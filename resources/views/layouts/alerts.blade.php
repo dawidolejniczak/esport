@@ -12,10 +12,10 @@
 
 $(function () {
             new PNotify({
-                // title: 'Regular Notice',
+                title: "Oh No",
                 text: "{{ $error }}",
                 type: "error",
-                icon: false
+                icon: false,
             });
         });
 
