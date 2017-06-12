@@ -17,6 +17,7 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->string('title', 100)->unique();
             $table->string('image');
+            $table->string('image_min');
             $table->enum('status', ['Hot', 'Queue'])->default('Queue');
             $table->string('youTube')->nullable();
             $table->string('embeddedCode')->nullable();

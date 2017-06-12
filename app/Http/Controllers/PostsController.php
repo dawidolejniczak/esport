@@ -90,13 +90,19 @@ class PostsController extends Controller
         }
 
         $image = $request->file('image');
+        list($width, $height) = getimagesize($image);
         $fileName = $request->title . '.' . $image->getClientOriginalExtension();
         $location = public_path('uploads\\' . $fileName);
-        Image::make($image)->resize(710, 486)->save($location);
+        Image::make($image)->fit(710, $height)->save($location);
+
+        $fileNameMin = $request->title . '.min.' . $image->getClientOriginalExtension();
+        $location = public_path('uploads\\' . $fileNameMin);
+        Image::make($image)->resize(100, 100)->save($location);
 
         $post = $this->repository->create([
             'title' => $request->title,
             'image' => $fileName,
+            'image_min' => $fileNameMin,
             'youTube' => $request->youTube,
             'embeddedCode' => $request->embeddedCode,
             'date' => Carbon::now(),
@@ -147,7 +153,7 @@ class PostsController extends Controller
             'post' => $post,
             'youTube' => $youTube,
             'embed' => $embed
-            ]);
+        ]);
     }
 
 

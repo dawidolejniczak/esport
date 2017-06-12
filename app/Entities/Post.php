@@ -20,7 +20,8 @@ class Post extends Model implements Transformable
         'youTube',
         'embeddedCode',
         'date',
-        'user_id'
+        'user_id',
+        'image_min'
     ];
 
     protected $fieldSearchable = [
