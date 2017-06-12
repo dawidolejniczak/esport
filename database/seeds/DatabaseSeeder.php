@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
         $this->call(\Backpack\Settings\database\seeds\SettingsTableSeeder::class);
         $this->call(RolesTableSeeder::class);
         $this->call(PermissionsTableSeeder::class);
+        $this->call(GamesTableSeeder::class);
     }
 }
