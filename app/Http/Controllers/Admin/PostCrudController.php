@@ -40,7 +40,7 @@ class PostCrudController extends CrudController
             'placeholder' => 'Your title here',
         ]);
 
-        $this->crud->addField([    // Image
+        $this->crud->removeField([    // Image
             'name' => 'image',
             'label' => 'Image',
             'type' => 'browse',
@@ -75,6 +75,10 @@ class PostCrudController extends CrudController
             'type' => 'text',
             'placeholder' => 'Your Link here',
         ]);
+
+        // ------ CRUD COLUMNS
+        $this->crud->removeColumn('youTube');
+        $this->crud->removeColumn('embeddedCode');
 
         // ------ CRUD BUTTONS
         // possible positions: 'beginning' and 'end'; defaults to 'beginning' for the 'line' stack, 'end' for the others;
