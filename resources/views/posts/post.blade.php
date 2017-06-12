@@ -2,7 +2,7 @@
     <article>
         @include('posts.header')
         <div class="photo">
-            <a href=""><img src="{{ asset('uploads/' . $post->image) }}" alt="{{ $post->title }}"></a>
+            <a href="{{ asset('uploads/' . $post->image) }}"><img src="{{ asset('uploads/' . $post->image) }}" alt="{{ $post->title }}"></a>
         </div>
     </article>
 @endforeach
