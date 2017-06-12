@@ -47,6 +47,8 @@ class PostCrudController extends CrudController
             'type' => 'browse',
         ]);
 
+        $this->crud->removeField('image_min');
+
         $this->crud->addField([    // ENUM
             'name' => 'status',
             'label' => 'Status',
@@ -94,7 +96,8 @@ class PostCrudController extends CrudController
             'attribute' => 'name', // foreign key attribute that is shown to user
             'model' => User::class, // foreign key model
         ]);
-        
+
+        $this->crud->removeColumn('image_min');
         $this->crud->removeColumn('youTube');
         $this->crud->removeColumn('embeddedCode');
 

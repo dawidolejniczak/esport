@@ -26,7 +26,6 @@ class PostRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
     {
         return [
             'title' => 'required|min:5|max:255',
-            'image' => 'required',
             'status' => 'required'
         ];
     }
