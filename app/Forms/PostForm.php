@@ -21,11 +21,11 @@ class PostForm extends Form
             ])
             ->add('youTube', 'text', [
                 'label' => 'Youtube',
-                'rules' => 'nullable|active_url',
+                'rules' => 'nullable|url',
             ])
             ->add('embeddedCode', 'text', [
                 'label' => 'Embedded code (twitch, oddshot etc.)',
-                'rules' => 'nullable|active_url',
+                'rules' => 'nullable|url',
             ])
             ->add('games', 'checkbox', [
                 'template' => 'layouts.posts.checkboxes'
