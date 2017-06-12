@@ -110,7 +110,7 @@ class PostsController extends Controller
             'data' => $post->toArray(),
         ];
 
-        return redirect()->back()->with('message', $response['message']);
+        return redirect()->route('queue')->with('message', $response['message']);
     }
 
 
