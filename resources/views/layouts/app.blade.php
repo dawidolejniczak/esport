@@ -64,8 +64,10 @@
                                     <form action="{{ route('users.store') }}" method="post">
                                         {{ csrf_field() }}
                                         <ul>
-                                            <li><input type="text" name="name" value="{{ old('name') }}" placeholder="Login"></li>
-                                            <li><input type="text" name="email" value="{{ old('email') }}" placeholder="Email"></li>
+                                            <li><input type="text" name="name" value="{{ old('name') }}"
+                                                       placeholder="Login"></li>
+                                            <li><input type="text" name="email" value="{{ old('email') }}"
+                                                       placeholder="Email"></li>
                                             <li><input type="password" name="password" placeholder="Password"></li>
                                             <li><input type="password" name="password_confirmation"
                                                        placeholder="Password">
@@ -89,8 +91,10 @@
                                           action="{{ route('login') }}">
                                         {{ csrf_field() }}
                                         <ul>
-                                            <li><input type="text" name="email" value="{{ old('name') }}" placeholder="Email"></li>
-                                            <li><input type="password" name="password" value="{{ old('name') }}" placeholder="Password"></li>
+                                            <li><input type="text" name="email" value="{{ old('name') }}"
+                                                       placeholder="Email"></li>
+                                            <li><input type="password" name="password" value="{{ old('name') }}"
+                                                       placeholder="Password"></li>
                                             <li>
                                                 <a href="{{ route('password.request') }}">Forgot password?</a>
                                                 <button class="btn">Login</button>
@@ -143,7 +147,9 @@
         return t;
     }(document, "script", "twitter-wjs"));
 </script>
-@include('layouts.filters')
+@if(!Request::is('posts/create') && !Request::is('myprofile'))
+    @include('layouts.filters')
+@endif
 <div>
     @include('layouts.alerts')
 </div>

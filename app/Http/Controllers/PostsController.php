@@ -68,11 +68,9 @@ class PostsController extends Controller
 
     public function create(FormBuilder $formBuilder, PostCreateRequest $request)
     {
-        $games = app(GameRepository::class)->all();
         $form = $formBuilder->create(PostForm::class);
         return view('posts.create', [
             'form' => $form,
-            'games' => $games
         ]);
     }
 
