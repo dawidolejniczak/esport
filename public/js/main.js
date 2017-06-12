@@ -51,5 +51,9 @@ var EsportApp = window.EsportApp = window.EsportApp || {};
 
         var i = $('input[type="checkbox"]:checked').length;
         $(".counter").find("span").text(i);
+
+        $(".alert").delay(7000).slideUp(200, function() {
+            $(this).alert('close');
+        });
     });
 })(window.jQuery);
