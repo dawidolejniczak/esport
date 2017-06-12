@@ -21,6 +21,7 @@ class CreatePostsTable extends Migration
             $table->string('youTube')->nullable();
             $table->string('embeddedCode')->nullable();
             $table->dateTime('date');
+            $table->integer('user_id');
             $table->softDeletes();
             $table->timestamps();
 		});

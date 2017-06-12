@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Entities\Game;
 use App\Entities\Post;
+use App\Entities\User;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
@@ -76,7 +77,24 @@ class PostCrudController extends CrudController
             'placeholder' => 'Your Link here',
         ]);
 
+        $this->crud->addField([    // User
+            'name' => 'user_id',
+            'label' => 'User',
+            'type' => 'select',
+            'entity' => 'user', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => User::class, // foreign key model
+        ]);
+
         // ------ CRUD COLUMNS
+        $this->crud->setColumnDetails('user_id', [
+            'label' => 'User', // Table column heading
+            'type' => 'select',
+            'entity' => 'user', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => User::class, // foreign key model
+        ]);
+        
         $this->crud->removeColumn('youTube');
         $this->crud->removeColumn('embeddedCode');
 

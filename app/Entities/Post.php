@@ -19,7 +19,8 @@ class Post extends Model implements Transformable
         'status',
         'youTube',
         'embeddedCode',
-        'date'
+        'date',
+        'user_id'
     ];
 
     protected $fieldSearchable = [
@@ -30,5 +31,10 @@ class Post extends Model implements Transformable
     public function games()
     {
         return $this->belongsToMany(Game::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

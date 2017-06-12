@@ -9,6 +9,7 @@ use App\Repositories\GameRepository;
 use Backpack\Settings\app\Models\Setting;
 use Carbon\Carbon;
 use Cohensive\Embed\Facades\Embed;
+use Illuminate\Support\Facades\Auth;
 use Image;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -98,7 +99,8 @@ class PostsController extends Controller
             'image' => $fileName,
             'youTube' => $request->youTube,
             'embeddedCode' => $request->embeddedCode,
-            'date' => Carbon::now()
+            'date' => Carbon::now(),
+            'user_id' => Auth::user()->id
         ]);
 
         $this->repository->sync($post->id, 'games', $request->game);
