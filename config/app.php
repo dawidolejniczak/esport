@@ -209,6 +209,11 @@ return [
          * Embedded Code
          */
         Cohensive\Embed\EmbedServiceProvider::class,
+
+        /*
+         * Debugger
+         */
+        Barryvdh\Debugbar\ServiceProvider::class,
     ],
 
     /*
@@ -259,7 +264,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'FormBuilder' => Kris\LaravelFormBuilder\Facades\FormBuilder::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-        'Embed' => Cohensive\Embed\Facades\Embed::class
+        'Embed' => Cohensive\Embed\Facades\Embed::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];

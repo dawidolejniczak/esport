@@ -39,8 +39,9 @@ class PostsController extends Controller
      */
     public function index()
     {
+        $pagination = Setting::where('key', 'pagination')->first();
         $this->repository->pushCriteria(HotCriteria::class);
-        $posts = $this->repository->paginate(10);
+        $posts = $this->repository->paginate($pagination->value);
         return view('posts.hot', compact('posts'));
     }
 
@@ -53,7 +54,6 @@ class PostsController extends Controller
     {
         $pagination = Setting::where('key', 'pagination')->first();
         $this->repository->pushCriteria(QueueCriteria::class);
-        $this->repository->pushCriteria(app(RequestCriteria::class));
         $posts = $this->repository->paginate($pagination->value);
         return view('posts.queue', compact('posts'));
     }
