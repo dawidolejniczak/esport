@@ -89,26 +89,27 @@ class PostsController extends Controller
             return redirect()->back()->withErrors($form->getErrors())->withInput();
         }
 
+        $timestamp =  date('YmdHis');
         $image = $request->file('image');
         list($width, $height) = getimagesize($image);
 
-        $fileNameOriginal = $request->title . '.original.' . $image->getClientOriginalExtension();
+        $fileNameOriginal = $request->title . $timestamp . '.original.' . $image->getClientOriginalExtension();
         $location = public_path('uploads\\' . $fileNameOriginal);
         Image::make($image)->save($location);
 
         if ($image->getClientOriginalExtension() == 'gif') {
             $fileName = $fileNameOriginal;
         } else {
-            $fileName = $request->title . '.' . $image->getClientOriginalExtension();
+            $fileName = $request->title . $timestamp . '.' . $image->getClientOriginalExtension();
             $location = public_path('uploads\\' . $fileName);
             Image::make($image)->fit(config('image.large_width'), $height)->save($location);
         }
 
-        $fileNameMedium = $request->title . '.medium.' . $image->getClientOriginalExtension();
+        $fileNameMedium = $request->title . $timestamp . '.medium.' . $image->getClientOriginalExtension();
         $location = public_path('uploads\\' . $fileNameMedium);
         Image::make($image)->fit(config('image.medium_size'))->save($location);
 
-        $fileNameMin = $request->title . '.min.' . $image->getClientOriginalExtension();
+        $fileNameMin = $request->title . $timestamp . '.min.' . $image->getClientOriginalExtension();
         $location = public_path('uploads\\' . $fileNameMin);
         Image::make($image)->resize(config('image.small_size'), config('image.small_size'))->save($location);
 
