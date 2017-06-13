@@ -7,6 +7,11 @@ body {
   font: 14px/1.2em 'Poppins', sans-serif;
   background: $xlight-g;
 }
+
+.text-danger{
+  margin-top: 7px;
+  color: red;
+}
 a {
   text-decoration: none;
   @include transition(all .2s ease-in-out);
