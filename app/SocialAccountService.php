@@ -26,10 +26,11 @@ class SocialAccountService
             $user = User::whereEmail($providerUser->getEmail())->first();
             if (!$user)
             {
+                $timestamp =  date('YmdHis');
                 $image = $providerUser->getAvatar();
-                $fileName = $providerUser->getName() . Carbon::now()->toDateString() . '.' . 'png';
+                $fileName = $providerUser->getName() . $timestamp. '.' . 'png';
                 $location = public_path('uploads\\' . $fileName);
-                Image::make($image)->resize(50, 50)->save($location);
+                Image::make($image)->fit(config('image.small_size'))->save($location);
 
                 $user = User::create([
                     'email' => $providerUser->getEmail(),

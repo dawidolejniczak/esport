@@ -25,8 +25,6 @@
                                 {!! form_widget($form->image) !!}
                             </div>
                         </div>
-                        {!! form_row($form->password) !!}
-                        {!! form_row($form->password_confirmation) !!}
                         {!! form_row($form->submit) !!}
                     </div>
                 </form>

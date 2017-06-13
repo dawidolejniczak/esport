@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Entities\User;
+use App\Forms\ChangePasswordForm;
+use App\Forms\EditUserForm;
 use App\Forms\UserForm;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -72,10 +74,11 @@ class UsersController extends Controller
         }
 
         if ($request->image) {
+            $timestamp =  date('YmdHis');
             $image = $request->file('image');
-            $fileName = $request->name . Carbon::now() . '.' . $image->getClientOriginalExtension();
+            $fileName = $request->name . $timestamp . '.' . $image->getClientOriginalExtension();
             $location = public_path('uploads\\' . $fileName);
-            Image::make($image)->resize(50, 50)->save($location);
+            Image::make($image)->fit(config(config('image.small_size')))->save($location);
         } else {
             $fileName = NULL;
         }
@@ -147,16 +150,17 @@ class UsersController extends Controller
      */
     public function update(UserUpdateRequest $request, $id, FormBuilder $formBuilder)
     {
-        $form = $formBuilder->create(UserForm::class);
+        $form = $formBuilder->create(EditUserForm::class);
         if (!$form->isValid()) {
             return redirect()->back()->withErrors($form->getErrors())->withInput();
         }
 
+        $timestamp =  date('YmdHis');
         if ($request->image) {
             $image = $request->file('image');
-            $fileName = $request->name . str_replace([':', '-'], '', Carbon::now()) . '.' . $image->getClientOriginalExtension();
+            $fileName = $request->name . $timestamp . '.' . $image->getClientOriginalExtension();
             $location = public_path('uploads\\' . $fileName);
-            Image::make($image)->resize(50, 50)->save($location);
+            Image::make($image)->fit(config('image.small_size'))->save($location);
         } else {
             $fileName = NULL;
         }
@@ -166,7 +170,6 @@ class UsersController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'image' => $fileName,
-            'password' => bcrypt($request->password),
         ], $id);
 
         $response = [

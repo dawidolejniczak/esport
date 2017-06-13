@@ -46,7 +46,7 @@ Route::resource('posts', PostsController::class, ['only' => [
 Route::get('queue', 'PostsController@queue')->name('queue');
 
 Route::resource('users', UsersController::class, ['only' => [
-    'store', 'create', 'update'
+    'store', 'update'
 ]]);
 
 Route::get('myprofile', 'UsersController@edit')->name('myProfile');
