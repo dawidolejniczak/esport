@@ -95,6 +95,16 @@ class PostCrudController extends CrudController
             'model' => User::class, // foreign key model
         ]);
 
+        $this->crud->addColumn([
+            'label' => 'Games',
+            'type' => 'select_multiple',
+            'name' => 'games', // the method that defines the relationship in your Model
+            'entity' => 'games', // the method that defines the relationship in your Model
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'model' => Game::class, // foreign key model
+            'pivot' => true, // on create&update, do you need to add/delete pivot table entries?
+        ]);
+
         $this->crud->removeColumn('youTube');
         $this->crud->removeColumn('embeddedCode');
 
