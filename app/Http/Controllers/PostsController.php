@@ -91,18 +91,30 @@ class PostsController extends Controller
 
         $image = $request->file('image');
         list($width, $height) = getimagesize($image);
-        $fileName = $request->title . '.' . $image->getClientOriginalExtension();
-        $location = public_path('uploads\\' . $fileName);
-        Image::make($image)->fit(710, $height)->save($location);
+
+        $fileNameOriginal = $request->title . '.original.' . $image->getClientOriginalExtension();
+        $location = public_path('uploads\\' . $fileNameOriginal);
+        Image::make($image)->save($location);
+
+        if ($image->getClientOriginalExtension() == 'gif') {
+            $fileName = $fileNameOriginal;
+        } else {
+            $fileName = $request->title . '.' . $image->getClientOriginalExtension();
+            $location = public_path('uploads\\' . $fileName);
+            Image::make($image)->fit(config('image.large_width'), $height)->save($location);
+        }
+
+        $fileNameMedium = $request->title . '.medium.' . $image->getClientOriginalExtension();
+        $location = public_path('uploads\\' . $fileNameMedium);
+        Image::make($image)->fit(config('image.medium_size'))->save($location);
 
         $fileNameMin = $request->title . '.min.' . $image->getClientOriginalExtension();
         $location = public_path('uploads\\' . $fileNameMin);
-        Image::make($image)->resize(100, 100)->save($location);
+        Image::make($image)->resize(config('image.small_size'), config('image.small_size'))->save($location);
 
         $post = $this->repository->create([
             'title' => $request->title,
             'image' => $fileName,
-            'image_min' => $fileNameMin,
             'youTube' => $request->youTube,
             'embeddedCode' => $request->embeddedCode,
             'date' => Carbon::now(),

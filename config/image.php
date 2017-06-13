@@ -15,6 +15,13 @@ return array(
     |
     */
 
-    'driver' => 'gd'
+    'driver' => 'gd',
+
+    /*
+     * Size of image miniature
+     */
+    'small_size' => 200,
+    'medium_size' => 400,
+    'large_width' => 800,
 
 );

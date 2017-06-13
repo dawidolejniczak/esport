@@ -21,7 +21,6 @@ class Post extends Model implements Transformable
         'embeddedCode',
         'date',
         'user_id',
-        'image_min'
     ];
 
     protected $fieldSearchable = [
