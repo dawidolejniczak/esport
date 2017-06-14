@@ -105,9 +105,16 @@ class PostsController extends Controller
             $originalExtension = substr($image, strpos($image, 'maxresdefault.') + 14);
         }
 
+        $fileNameMedium = $request->title . $timestamp . '.medium.' . $originalExtension;
+        $location = public_path('uploads\\' . $fileNameMedium);
+        Image::make($image)->fit(config('image.medium_size'))->save($location);
+
+        $fileNameMin = $request->title . $timestamp . '.min.' . $originalExtension;
+        $location = public_path('uploads\\' . $fileNameMin);
+        Image::make($image)->resize(config('image.small_size'), config('image.small_size'))->save($location);
+
         $fileNameOriginal = $request->title . $timestamp . '.original.' . $originalExtension;
-        $location = public_path('uploads\\' . $fileNameOriginal);
-        Image::make($image)->save($location);
+        $image->move('uploads', $fileNameOriginal);
 
         if ($originalExtension == 'gif') {
             $fileName = $fileNameOriginal;
@@ -122,14 +129,6 @@ class PostsController extends Controller
                 Image::make($image)->fit(config('image.large_width'), '720')->save($location);
             }
         }
-
-        $fileNameMedium = $request->title . $timestamp . '.medium.' . $originalExtension;
-        $location = public_path('uploads\\' . $fileNameMedium);
-        Image::make($image)->fit(config('image.medium_size'))->save($location);
-
-        $fileNameMin = $request->title . $timestamp . '.min.' . $originalExtension;
-        $location = public_path('uploads\\' . $fileNameMin);
-        Image::make($image)->resize(config('image.small_size'), config('image.small_size'))->save($location);
 
         $post = $this->repository->create([
             'title' => $request->title,
