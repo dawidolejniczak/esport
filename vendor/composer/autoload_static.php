@@ -505,9 +505,19 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
                 0 => __DIR__ . '/..' . '/cohensive/embed/src',
             ),
         ),
+        'A' => 
+        array (
+            'Alaouy\\Youtube\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/alaouy/youtube/src',
+            ),
+        ),
     );
 
     public static $classMap = array (
+        'Alaouy\\Youtube\\Facades\\Youtube' => __DIR__ . '/..' . '/alaouy/youtube/src/Alaouy/Youtube/Facades/Youtube.php',
+        'Alaouy\\Youtube\\Youtube' => __DIR__ . '/..' . '/alaouy/youtube/src/Alaouy/Youtube/Youtube.php',
+        'Alaouy\\Youtube\\YoutubeServiceProvider' => __DIR__ . '/..' . '/alaouy/youtube/src/Alaouy/Youtube/YoutubeServiceProvider.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Criteria\\HotCriteria' => __DIR__ . '/../..' . '/app/Criteria/HotCriteria.php',
         'App\\Criteria\\QueueCriteria' => __DIR__ . '/../..' . '/app/Criteria/QueueCriteria.php',
@@ -515,6 +525,7 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         'App\\Entities\\Post' => __DIR__ . '/../..' . '/app/Entities/Post.php',
         'App\\Entities\\User' => __DIR__ . '/../..' . '/app/Entities/User.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Forms\\EditUserForm' => __DIR__ . '/../..' . '/app/Forms/EditUserForm.php',
         'App\\Forms\\PostForm' => __DIR__ . '/../..' . '/app/Forms/PostForm.php',
         'App\\Forms\\UserForm' => __DIR__ . '/../..' . '/app/Forms/UserForm.php',
         'App\\Http\\Controllers\\Admin\\GameCrudController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/GameCrudController.php',

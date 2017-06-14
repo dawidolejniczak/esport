@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Alaouy\Youtube\Facades\Youtube;
 use App\Criteria\HotCriteria;
 use App\Criteria\QueueCriteria;
 use App\Forms\PostForm;
@@ -89,27 +90,44 @@ class PostsController extends Controller
             return redirect()->back()->withErrors($form->getErrors())->withInput();
         }
 
-        $timestamp =  date('YmdHis');
-        $image = $request->file('image');
-        list($width, $height) = getimagesize($image);
+        if (!isset($request->image) && !isset($request->youTube)) {
+            return redirect()->back()->withErrors(['message' => 'Video or Image is required'])->withInput();
+        }
 
-        $fileNameOriginal = $request->title . $timestamp . '.original.' . $image->getClientOriginalExtension();
+        $timestamp = date('YmdHis');
+        if (isset($request->image)) {
+            $image = $request->file('image');
+            list($width, $height) = getimagesize($image);
+            $originalExtension = $image->getClientOriginalExtension();
+        } else {
+            $videoCode = Youtube::parseVidFromURL($request->youTube);
+            $image = 'https://img.youtube.com/vi/' . $videoCode . '/maxresdefault.jpg';
+            $originalExtension = substr($image, strpos($image, 'maxresdefault.') + 14);
+        }
+
+        $fileNameOriginal = $request->title . $timestamp . '.original.' . $originalExtension;
         $location = public_path('uploads\\' . $fileNameOriginal);
         Image::make($image)->save($location);
 
-        if ($image->getClientOriginalExtension() == 'gif') {
+        if ($originalExtension == 'gif') {
             $fileName = $fileNameOriginal;
         } else {
-            $fileName = $request->title . $timestamp . '.' . $image->getClientOriginalExtension();
-            $location = public_path('uploads\\' . $fileName);
-            Image::make($image)->fit(config('image.large_width'), $height)->save($location);
+            if (isset($request->image)) {
+                $fileName = $request->title . $timestamp . '.' . $originalExtension;
+                $location = public_path('uploads\\' . $fileName);
+                Image::make($image)->fit(config('image.large_width'), $height)->save($location);
+            } else {
+                $fileName = $request->title . $timestamp . '.' . $originalExtension;
+                $location = public_path('uploads\\' . $fileName);
+                Image::make($image)->fit(config('image.large_width'), '720')->save($location);
+            }
         }
 
-        $fileNameMedium = $request->title . $timestamp . '.medium.' . $image->getClientOriginalExtension();
+        $fileNameMedium = $request->title . $timestamp . '.medium.' . $originalExtension;
         $location = public_path('uploads\\' . $fileNameMedium);
         Image::make($image)->fit(config('image.medium_size'))->save($location);
 
-        $fileNameMin = $request->title . $timestamp . '.min.' . $image->getClientOriginalExtension();
+        $fileNameMin = $request->title . $timestamp . '.min.' . $originalExtension;
         $location = public_path('uploads\\' . $fileNameMin);
         Image::make($image)->resize(config('image.small_size'), config('image.small_size'))->save($location);
 

@@ -6,6 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Alaouy\\Youtube\\Facades\\Youtube' => $vendorDir . '/alaouy/youtube/src/Alaouy/Youtube/Facades/Youtube.php',
+    'Alaouy\\Youtube\\Youtube' => $vendorDir . '/alaouy/youtube/src/Alaouy/Youtube/Youtube.php',
+    'Alaouy\\Youtube\\YoutubeServiceProvider' => $vendorDir . '/alaouy/youtube/src/Alaouy/Youtube/YoutubeServiceProvider.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Criteria\\HotCriteria' => $baseDir . '/app/Criteria/HotCriteria.php',
     'App\\Criteria\\QueueCriteria' => $baseDir . '/app/Criteria/QueueCriteria.php',
@@ -13,6 +16,7 @@ return array(
     'App\\Entities\\Post' => $baseDir . '/app/Entities/Post.php',
     'App\\Entities\\User' => $baseDir . '/app/Entities/User.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Forms\\EditUserForm' => $baseDir . '/app/Forms/EditUserForm.php',
     'App\\Forms\\PostForm' => $baseDir . '/app/Forms/PostForm.php',
     'App\\Forms\\UserForm' => $baseDir . '/app/Forms/UserForm.php',
     'App\\Http\\Controllers\\Admin\\GameCrudController' => $baseDir . '/app/Http/Controllers/Admin/GameCrudController.php',

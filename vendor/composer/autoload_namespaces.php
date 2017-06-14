@@ -19,4 +19,5 @@ return array(
     'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib'),
     'Doctrine\\Common\\Collections\\' => array($vendorDir . '/doctrine/collections/lib'),
     'Cohensive\\Embed' => array($vendorDir . '/cohensive/embed/src'),
+    'Alaouy\\Youtube\\' => array($vendorDir . '/alaouy/youtube/src'),
 );

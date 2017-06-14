@@ -4,8 +4,54 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3af1088a5064dbba94d6fc00458dc785",
+    "content-hash": "1c387c62d719ce946f836e0e48a39660",
     "packages": [
+        {
+            "name": "alaouy/youtube",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alaouy/Youtube.git",
+                "reference": "f6abd68299a498b923499b428f740060b01f4f5d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alaouy/Youtube/zipball/f6abd68299a498b923499b428f740060b01f4f5d",
+                "reference": "f6abd68299a498b923499b428f740060b01f4f5d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*@stable"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Alaouy\\Youtube\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mustapha Alaouy",
+                    "email": "alaouym@gmail.com"
+                }
+            ],
+            "description": "Laravel PHP Facade/Wrapper for the Youtube Data API v3",
+            "keywords": [
+                "alaouy",
+                "api",
+                "laravel",
+                "video",
+                "youtube"
+            ],
+            "time": "2017-05-11T20:25:14+00:00"
+        },
         {
             "name": "almasaeed2010/adminlte",
             "version": "v2.3.11",
@@ -5945,6 +5991,7 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
+        "alaouy/youtube": 20,
         "cohensive/embed": 20,
         "laracasts/generators": 20
     },

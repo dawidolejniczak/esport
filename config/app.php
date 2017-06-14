@@ -214,6 +214,11 @@ return [
          * Debugger
          */
         Barryvdh\Debugbar\ServiceProvider::class,
+
+        /*
+         * YouTube
+         */
+        Alaouy\Youtube\YoutubeServiceProvider::class,
     ],
 
     /*
@@ -266,6 +271,7 @@ return [
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Embed' => Cohensive\Embed\Facades\Embed::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Youtube' => Alaouy\Youtube\Facades\Youtube::class,
     ],
 
 ];

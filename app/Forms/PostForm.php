@@ -14,7 +14,6 @@ class PostForm extends Form
                 'rules' => 'required|min:5|max:100|unique:posts,title',
             ])
             ->add('image', 'file', [
-                'rules' => 'required',
                 'attr' => [
                     'accept' => 'image/*'
                 ]
