@@ -103,6 +103,9 @@ class PostsController extends Controller
             $videoCode = Youtube::parseVidFromURL($request->youTube);
             $image = 'https://img.youtube.com/vi/' . $videoCode . '/maxresdefault.jpg';
             $originalExtension = substr($image, strpos($image, 'maxresdefault.') + 14);
+            if(!file_exists(public_path($image))){
+                return redirect()->back()->withErrors(['message' => 'Change Video'])->withInput();
+            }
         }
 
         $fileNameMedium = $request->title . $timestamp . '.medium.' . $originalExtension;
