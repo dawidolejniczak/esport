@@ -52,3 +52,9 @@ Route::resource('users', UsersController::class, ['only' => [
 ]]);
 
 Route::get('myprofile', 'UsersController@edit')->name('myProfile');
+
+Route::get('password/edit', 'PasswordsController@edit')->name('password.edit');
+
+Route::resource('password', PasswordsController::class, ['only' => [
+    'update'
+]]);

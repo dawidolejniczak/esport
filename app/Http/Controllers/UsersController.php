@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Entities\User;
-use App\Forms\ChangePasswordForm;
 use App\Forms\EditUserForm;
 use App\Forms\UserForm;
 use Carbon\Carbon;

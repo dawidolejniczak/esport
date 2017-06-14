@@ -16,6 +16,7 @@ return array(
     'App\\Entities\\Post' => $baseDir . '/app/Entities/Post.php',
     'App\\Entities\\User' => $baseDir . '/app/Entities/User.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Forms\\EditPasswordForm' => $baseDir . '/app/Forms/EditPasswordForm.php',
     'App\\Forms\\EditUserForm' => $baseDir . '/app/Forms/EditUserForm.php',
     'App\\Forms\\PostForm' => $baseDir . '/app/Forms/PostForm.php',
     'App\\Forms\\UserForm' => $baseDir . '/app/Forms/UserForm.php',

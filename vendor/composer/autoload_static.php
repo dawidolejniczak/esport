@@ -525,6 +525,7 @@ class ComposerStaticInit9f303ea58789fc7235e99c24348b38ce
         'App\\Entities\\Post' => __DIR__ . '/../..' . '/app/Entities/Post.php',
         'App\\Entities\\User' => __DIR__ . '/../..' . '/app/Entities/User.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Forms\\EditPasswordForm' => __DIR__ . '/../..' . '/app/Forms/EditPasswordForm.php',
         'App\\Forms\\EditUserForm' => __DIR__ . '/../..' . '/app/Forms/EditUserForm.php',
         'App\\Forms\\PostForm' => __DIR__ . '/../..' . '/app/Forms/PostForm.php',
         'App\\Forms\\UserForm' => __DIR__ . '/../..' . '/app/Forms/UserForm.php',

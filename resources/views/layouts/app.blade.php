@@ -15,7 +15,7 @@
     <script src="/js/main.js"></script>
     <script src="/js/uploadImage.js"></script>
 </head>
-<body @if(Request::is('posts/create') || Request::is('users/create') || Request::is('myprofile')) class="add" @endif>
+<body @if(Request::is('posts/create') || Request::is('users/create') || Request::is('myprofile') || Request::is('password/edit')) class="add" @endif>
 <header>
     <div class="container-fluid">
         <div class="row">
@@ -51,6 +51,7 @@
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="dLabel">
                                     <li><a href="{{ route('myProfile') }}">My profile</a></li>
+                                    <li><a href="{{ route('password.edit') }}">Change Password</a></li>
                                     <li><a href="{{ route('logout') }}">Logout</a></li>
                                 </ul>
                             </li>
