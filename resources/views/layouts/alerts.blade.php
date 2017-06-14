@@ -12,3 +12,9 @@
         {{ Session::get('message') }}
     </div>
 @endif
+@if(Session::has('dropdown'))
+    <script>
+        var dropdown_class = '.' + '{{ Session::get('dropdown') }}';
+        $(dropdown_class).addClass('open');
+    </script>
+@endif

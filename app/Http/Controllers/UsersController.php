@@ -70,7 +70,7 @@ class UsersController extends Controller
     {
         $form = $formBuilder->create(UserForm::class);
         if (!$form->isValid()) {
-            return redirect()->back()->withErrors($form->getErrors())->withInput();
+            return redirect()->back()->withErrors($form->getErrors())->withInput()->with('dropdown', 'register');
         }
 
         if ($request->image) {
