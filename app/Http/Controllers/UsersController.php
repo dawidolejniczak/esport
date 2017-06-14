@@ -134,8 +134,10 @@ class UsersController extends Controller
         $form = $formBuilder->create(UserForm::class, [
             'model' => $user
         ]);
+
         return view('users.edit', [
             'form' => $form,
+            'user' => $user
         ]);
     }
 

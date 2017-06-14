@@ -15,7 +15,8 @@ class UserForm extends Form
             ])
             ->add('image', 'file', [
                 'attr' => [
-                    'accept' => 'image/*'
+                    'accept' => 'image/*',
+                    'id' => 'imageUpload'
                 ]
             ])
             ->add('email', 'text', [

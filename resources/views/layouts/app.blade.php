@@ -13,6 +13,7 @@
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
     <script src="/js/main.js"></script>
+    <script src="/js/uploadImage.js"></script>
 </head>
 <body @if(Request::is('posts/create') || Request::is('users/create') || Request::is('myprofile')) class="add" @endif>
 <header>

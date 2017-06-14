@@ -751,6 +751,7 @@ footer {
             text-align: center;
             position: relative;
             span {
+              /*
               &:before {
                 content: '';
                 position: relative;
@@ -761,6 +762,7 @@ footer {
                 height: 20px;
                 background: $content url(../img/icons/image.png) 0 0 no-repeat;
               }
+              */
             }
             input[type="file"] {
               opacity: 0;

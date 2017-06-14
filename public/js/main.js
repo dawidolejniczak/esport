@@ -57,7 +57,12 @@ var EsportApp = window.EsportApp = window.EsportApp || {};
         });
 
         $('input[type=file]').change(function(e){
-            alert = $(this).parents('.upload').find('span').text(e.target.files[0].name);
+            $(this).parents('.upload').find('span').text('');
+        });
+
+        $.uploadPreview({
+            input_field: "#imageUpload",
+            preview_box: ".upload"
         });
     });
 })(window.jQuery);
