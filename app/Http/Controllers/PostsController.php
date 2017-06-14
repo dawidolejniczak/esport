@@ -103,8 +103,12 @@ class PostsController extends Controller
             $videoCode = Youtube::parseVidFromURL($request->youTube);
             $image = 'https://img.youtube.com/vi/' . $videoCode . '/maxresdefault.jpg';
             $originalExtension = substr($image, strpos($image, 'maxresdefault.') + 14);
-            if(!file_exists(public_path($image))){
-                return redirect()->back()->withErrors(['message' => 'Change Video'])->withInput();
+            if(@getimagesize($image) === FALSE){
+                $image = 'https://img.youtube.com/vi/' . $videoCode . '/sddefault.jpg';
+                $originalExtension = substr($image, strpos($image, 'sddefault.') + 10);
+                if(@getimagesize($image) === FALSE){
+                    return redirect()->back()->withErrors(['message' => 'Change video or add image'])->withInput();
+                }
             }
         }
 
@@ -117,15 +121,15 @@ class PostsController extends Controller
         Image::make($image)->resize(config('image.small_size'), config('image.small_size'))->save($location);
 
         $fileNameOriginal = $request->title . $timestamp . '.original.' . $originalExtension;
-        $image->move('uploads', $fileNameOriginal);
-
         if ($originalExtension == 'gif') {
             $fileName = $fileNameOriginal;
+            $image->move('uploads', $fileNameOriginal);
         } else {
             if (isset($request->image)) {
                 $fileName = $request->title . $timestamp . '.' . $originalExtension;
                 $location = public_path('uploads\\' . $fileName);
                 Image::make($image)->fit(config('image.large_width'), $height)->save($location);
+                $image->move('uploads', $fileNameOriginal);
             } else {
                 $fileName = $request->title . $timestamp . '.' . $originalExtension;
                 $location = public_path('uploads\\' . $fileName);
