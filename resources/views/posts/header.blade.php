@@ -29,7 +29,7 @@
     </div>
     <div class="links">
         @foreach($post->games as $game)
-            <a href="">{{ $game->name }}</a>
+            <a href="?search=games.name:{{ $game->name }}">{{ $game->name }}</a>
         @endforeach
     </div>
 </header>
