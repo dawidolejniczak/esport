@@ -36,7 +36,9 @@ Route::group([
     'namespace' => 'Admin'
 ], function () {
     // your CRUD resources and other admin routes here
-    CRUD::resource('post', 'PostCrudController');
+    CRUD::resource('post', 'PostCrudController', ['except' => [
+        'store', 'create'
+    ]]);
 });
 
 Route::resource('posts', PostsController::class, ['only' => [
