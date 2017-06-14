@@ -157,9 +157,9 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($title)
     {
-        $post = $this->repository->find($id);
+        $post = $this->repository->findByField('title', $title)->first();
         $youTube = Embed::make($post->youTube)->parseUrl();
         if ($youTube) {
             $youTube->setAttribute(['width' => 710]);
