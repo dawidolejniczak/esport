@@ -98,7 +98,6 @@
                                             <li><input type="password" name="password" value="{{ old('name') }}"
                                                        placeholder="Password"></li>
                                             <li>
-                                                <a href="{{ route('password.request') }}">Forgot password?</a>
                                                 <button class="btn">Login</button>
                                             </li>
                                         </ul>

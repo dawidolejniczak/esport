@@ -6,16 +6,11 @@ use Alaouy\Youtube\Facades\Youtube;
 use App\Criteria\HotCriteria;
 use App\Criteria\QueueCriteria;
 use App\Forms\PostForm;
-use App\Repositories\GameRepository;
-use Backpack\Settings\app\Models\Setting;
 use Carbon\Carbon;
 use Cohensive\Embed\Facades\Embed;
 use Illuminate\Support\Facades\Auth;
-use Image;
-use Illuminate\Http\Request;
-use App\Http\Requests;
+use Intervention\Image\Facades\Image;
 use Kris\LaravelFormBuilder\FormBuilder;
-use Prettus\Repository\Criteria\RequestCriteria;
 use App\Http\Requests\PostCreateRequest;
 use App\Http\Requests\PostUpdateRequest;
 use App\Repositories\PostRepository;
@@ -41,9 +36,8 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $pagination = Setting::where('key', 'pagination')->first();
         $this->repository->pushCriteria(HotCriteria::class);
-        $posts = $this->repository->paginate($pagination->value);
+        $posts = $this->repository->paginate(25);
         return view('posts.hot', compact('posts'));
     }
 
@@ -54,9 +48,8 @@ class PostsController extends Controller
      */
     public function queue()
     {
-        $pagination = Setting::where('key', 'pagination')->first();
         $this->repository->pushCriteria(QueueCriteria::class);
-        $posts = $this->repository->paginate($pagination->value);
+        $posts = $this->repository->paginate(25);
         return view('posts.queue', compact('posts'));
     }
 

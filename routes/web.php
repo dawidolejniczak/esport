@@ -21,25 +21,6 @@ Route::get('/callback', 'SocialAuthController@callback');
 
 Route::get('/', 'PostsController@index');
 
-Route::group([
-    'prefix' => config('backpack.base.route_prefix', 'admin'),
-    'middleware' => ['admin'],
-    'namespace' => 'Admin'
-], function () {
-    // your CRUD resources and other admin routes here
-    CRUD::resource('game', 'GameCrudController');
-});
-
-Route::group([
-    'prefix' => config('backpack.base.route_prefix', 'admin'),
-    'middleware' => ['admin'],
-    'namespace' => 'Admin'
-], function () {
-    // your CRUD resources and other admin routes here
-    CRUD::resource('post', 'PostCrudController', ['except' => [
-        'store', 'create'
-    ]]);
-});
 
 Route::resource('posts', PostsController::class, ['only' => [
     'show', 'index', 'store', 'create'
@@ -58,3 +39,6 @@ Route::get('password/edit', 'PasswordsController@edit')->name('password.edit');
 Route::resource('password', PasswordsController::class, ['only' => [
     'update'
 ]]);
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
