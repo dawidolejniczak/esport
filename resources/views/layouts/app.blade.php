@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <title>Esport</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <link rel="stylesheet" media="all" href="/css/style.css">
+    <link rel="stylesheet" media="all" href="{{ asset('css/style.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&amp;subset=latin-ext" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('vendor/backpack/pnotify/pnotify.custom.min.css') }}">
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"
             integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
@@ -15,7 +14,11 @@
     <script src="/js/main.js"></script>
     <script src="/js/uploadImage.js"></script>
 </head>
-<body @if(Request::is('posts/create') || Request::is('users/create') || Request::is('myprofile') || Request::is('password/edit')) class="add" @endif>
+<body @if(Request::is('posts/create')
+|| Request::is('users/create') ||
+Request::is('myprofile') ||
+Request::is('password/edit'))
+      class="add" @endif>
 <header>
     <div class="container-fluid">
         <div class="row">
@@ -28,7 +31,9 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/"><img src="/images/logo.png" alt="esport"></a>
+                    <a class="navbar-brand" href="/">
+                        <img src="{{ asset('images/logo.png') }}" alt="esport">
+                    </a>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
@@ -77,7 +82,7 @@
                                             <li><input type="submit" class="btn" value="Register"></li>
                                         </ul>
                                         <a href="{{ asset('redirect') }}">
-                                            <img src="/images/login-fb.png" alt="">
+                                            <img src="{{ asset('images/login-fb.png') }}">
                                         </a>
                                     </form>
                                 </div>
@@ -102,7 +107,7 @@
                                             </li>
                                         </ul>
                                         <a href="{{ asset('redirect') }}">
-                                            <img src="/images/login-fb.png" alt="Facebook Login">
+                                            <img src="{{ asset('images/login-fb.png') }}" alt="Facebook Login">
                                         </a>
                                     </form>
                                 </div>
