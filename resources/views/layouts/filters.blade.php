@@ -11,13 +11,15 @@
             <div class="row">
                 <div class="col-xs-12">
                     <p class="counter"><span></span> games selected</p>
-                    <form action="">
-                        <ul>
-                            @foreach($games as $game)
-                            <li><input type="checkbox" class="gamesToCheck" name="game[]" id="game{{ $game->id }}" value="{{ $game->id }}"><label for="game{{ $game->id }}">{{ $game->name }}</label></li>
-                            @endforeach
-                        </ul>
-                    </form>
+                    <ul>
+                        @foreach($games as $game)
+                            <li>
+                                <input type="checkbox" class="gamesToCheck" name="game[]" id="game{{ $game->id }}"
+                                       value="{{ $game->id }}">
+                                <label for="game{{ $game->id }}">{{ $game->name }}</label>
+                            </li>
+                        @endforeach
+                    </ul>
                 </div>
             </div>
         </div>
