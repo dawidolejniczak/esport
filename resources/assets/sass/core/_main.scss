@@ -3,15 +3,17 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 body {
   font: 14px/1.2em 'Poppins', sans-serif;
   background: $xlight-g;
 }
 
-.text-danger{
+.text-danger {
   margin-top: 7px;
   color: red;
 }
+
 a {
   text-decoration: none;
   @include transition(all .2s ease-in-out);
@@ -19,18 +21,23 @@ a {
     text-decoration: none;
   }
 }
+
 ::-webkit-input-placeholder {
   color: #808080;
 }
+
 ::-moz-placeholder {
   color: #808080;
 }
+
 :-ms-input-placeholder {
   color: #808080;
 }
+
 :-moz-placeholder {
   color: #808080;
 }
+
 .link {
   color: #151515;
   font-weight: 600;
@@ -42,6 +49,7 @@ a {
     outline: 0;
   }
 }
+
 .btn {
   border-radius: 5px;
   border: 0;
@@ -87,12 +95,15 @@ a {
     margin: 20px 0 45px;
   }
 }
+
 ul {
   list-style: none;
 }
+
 .container-fluid {
   max-width: 1110px;
 }
+
 body > header {
   background: $basic;
   padding: 0;
@@ -172,7 +183,7 @@ body > header {
           width: calc(100% - 40px);
           margin: 10px 20px;
           text-align: right;
-          border-bottom: 1px solid rgba(255,255,255, .3);
+          border-bottom: 1px solid rgba(255, 255, 255, .3);
         }
         &:before {
           content: '';
@@ -190,17 +201,17 @@ body > header {
         }
         &.hot {
           &:before {
-            background-image: url(/img/icons/star.png);
+            background-image: url(/images/icons/star.png);
           }
         }
         &.queue {
           &:before {
-            background-image: url(/img/icons/send.png);
+            background-image: url(/images/icons/send.png);
           }
         }
         &.add {
           &:before {
-            background-image: url(/img/icons/check.png);
+            background-image: url(/images/icons/check.png);
           }
         }
         a {
@@ -262,9 +273,9 @@ body > header {
             height: 36px;
             line-height: 36px;
             border-radius: 5px;
-            -webkit-box-shadow: inset 5px 5px 10px 0 rgba(0,0,0,0.2);
-            -moz-box-shadow: inset 5px 5px 10px 0 rgba(0,0,0,0.2);
-            box-shadow: inset 5px 5px 10px 0 rgba(0,0,0,0.2);
+            -webkit-box-shadow: inset 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: inset 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: inset 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
           }
           ul {
             padding: 15px 20px 20px;
@@ -300,7 +311,7 @@ body > header {
           left: auto;
           @media (max-width: 360px) {
             width: 250px;
-            transform: translate(-50% ,0);
+            transform: translate(-50%, 0);
             position: fixed;
             left: 50%;
             top: 65px;
@@ -312,16 +323,16 @@ body > header {
           right: 0;
           background-color: #242424;
           padding: 15px 0;
-            li {
-              a {
-                display: block;
-                padding: 14px 40px;
-                color:  #808080;
-                font-size: 13px;
-                font-weight: 400;
-                &:hover {
-                  color: $content;
-                }
+          li {
+            a {
+              display: block;
+              padding: 14px 40px;
+              color: #808080;
+              font-size: 13px;
+              font-weight: 400;
+              &:hover {
+                color: $content;
+              }
             }
           }
         }
@@ -353,6 +364,7 @@ body > header {
     }
   }
 }
+
 #filters {
   background: $content;
   &.open {
@@ -379,7 +391,8 @@ body > header {
       line-height: 17px;
       margin-bottom: 15px;
       margin-top: 25px;
-      span {}
+      span {
+      }
     }
     form {
       overflow: hidden;
@@ -407,6 +420,7 @@ body > header {
     }
   }
 }
+
 main {
   margin: 80px 0 60px;
   img {
@@ -444,7 +458,7 @@ main {
           top: 0;
           width: 24px;
           height: 24px;
-          background: url(../img/icons/star.png) no-repeat center left;
+          background: url(../images/icons/star.png) no-repeat center left;
         }
       }
     }
@@ -507,7 +521,7 @@ main {
           a {
             color: $gray;
             font-size: 13px;
-            font-weight:400;
+            font-weight: 400;
           }
         }
       }
@@ -542,7 +556,7 @@ main {
         line-height: 34px;
         font-size: 15px;
         font-weight: 600;
-        display:  inline-block;
+        display: inline-block;
         position: relative;
         &:after {
           content: '';
@@ -602,6 +616,7 @@ main {
     }
   }
 }
+
 footer {
   min-height: 385px;
   background: $basic;
@@ -702,6 +717,7 @@ footer {
     }
   }
 }
+
 .add {
   main {
     .container-fluid {
@@ -720,7 +736,7 @@ footer {
           top: 10px;
           width: 24px;
           height: 24px;
-          background: url(../img/icons/send.png) center left no-repeat;
+          background: url(../images/icons/send.png) center left no-repeat;
         }
       }
       form {
@@ -745,7 +761,7 @@ footer {
             background-color: $content;
             width: 100%;
             height: 56px;
-            color:  #808080;
+            color: #808080;
             line-height: 52px;
             font-size: 13px;
             text-align: center;
@@ -760,7 +776,7 @@ footer {
                 width: 24px;
                 display: inline-block;
                 height: 20px;
-                background: $content url(../img/icons/image.png) 0 0 no-repeat;
+                background: $content url(../images/icons/image.png) 0 0 no-repeat;
               }
               */
             }
@@ -783,9 +799,9 @@ footer {
               border-radius: 3px;
               border: 1px solid #e1e1e1;
               box-sizing: border-box;
-              background-color:  #e1e1e1;
+              background-color: #e1e1e1;
               height: 38px;
-              color:  #808080;
+              color: #808080;
               font-size: 11px;
               line-height: 38px;
               font-weight: 400;
@@ -799,7 +815,7 @@ footer {
           > label {
             width: 100%;
             display: block;
-            color:  #151515;
+            color: #151515;
             font-size: 15px;
             font-weight: 500;
             line-height: 30px;
@@ -807,7 +823,7 @@ footer {
           input:not([type="file"], [type="checkbox"]) {
             border-radius: 3px;
             border: 1px solid #e1e1e1;
-            background-color:  $content;
+            background-color: $content;
             width: 100%;
             height: 38px;
             padding: 0 15px;

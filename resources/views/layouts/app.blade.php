@@ -28,7 +28,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/"><img src="/img/logo.png" alt="esport"></a>
+                    <a class="navbar-brand" href="/"><img src="/images/logo.png" alt="esport"></a>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
@@ -77,7 +77,7 @@
                                             <li><input type="submit" class="btn" value="Register"></li>
                                         </ul>
                                         <a href="{{ asset('redirect') }}">
-                                            <img src="/img/login-fb.png" alt="">
+                                            <img src="/images/login-fb.png" alt="">
                                         </a>
                                     </form>
                                 </div>
@@ -102,7 +102,7 @@
                                             </li>
                                         </ul>
                                         <a href="{{ asset('redirect') }}">
-                                            <img src="/img/login-fb.png" alt="Facebook Login">
+                                            <img src="/images/login-fb.png" alt="Facebook Login">
                                         </a>
                                     </form>
                                 </div>

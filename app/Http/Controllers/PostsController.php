@@ -106,11 +106,11 @@ class PostsController extends Controller
         }
 
         $fileNameMedium = $request->title . $timestamp . '.medium.' . $originalExtension;
-        $location = public_path('uploads\\' . $fileNameMedium);
+        $location = public_path('uploads/' . $fileNameMedium);
         Image::make($image)->fit(config('image.medium_size'))->save($location);
 
         $fileNameMin = $request->title . $timestamp . '.min.' . $originalExtension;
-        $location = public_path('uploads\\' . $fileNameMin);
+        $location = public_path('uploads/' . $fileNameMin);
         Image::make($image)->resize(config('image.small_size'), config('image.small_size'))->save($location);
 
         $fileNameOriginal = $request->title . $timestamp . '.original.' . $originalExtension;
@@ -120,12 +120,12 @@ class PostsController extends Controller
         } else {
             if (isset($request->image)) {
                 $fileName = $request->title . $timestamp . '.' . $originalExtension;
-                $location = public_path('uploads\\' . $fileName);
+                $location = public_path('uploads/' . $fileName);
                 Image::make($image)->fit(config('image.large_width'), $height)->save($location);
                 $image->move('uploads', $fileNameOriginal);
             } else {
                 $fileName = $request->title . $timestamp . '.' . $originalExtension;
-                $location = public_path('uploads\\' . $fileName);
+                $location = public_path('uploads/' . $fileName);
                 Image::make($image)->fit(config('image.large_width'), '720')->save($location);
             }
         }

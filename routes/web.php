@@ -24,7 +24,7 @@ Route::get('/', 'PostsController@index');
 
 Route::resource('posts', PostsController::class, ['only' => [
     'show', 'index', 'store', 'create'
-]]);
+]])->middleware('auth');
 
 Route::get('queue', 'PostsController@queue')->name('queue');
 

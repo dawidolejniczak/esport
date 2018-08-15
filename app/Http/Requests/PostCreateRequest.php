@@ -15,15 +15,7 @@ class PostCreateRequest extends FormRequest
      */
     public function authorize()
     {
-        if (!Auth::user()) {
-            return false;
-        }
-        $user = User::find(Auth::user()->id);
-        if ($user->hasPermission('Create_Posts')) {
-            return true;
-        } else {
-            return false;
-        }
+        return true;
 
     }
 
