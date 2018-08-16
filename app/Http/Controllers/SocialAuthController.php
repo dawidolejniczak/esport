@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Contracts\Auth\Authenticatable;
-use Illuminate\Http\Request;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use App\SocialAccountService;
+use App\Services\SocialAccountService;
 use Laravel\Socialite\Facades\Socialite;
 
 class SocialAuthController extends Controller
@@ -19,6 +16,7 @@ class SocialAuthController extends Controller
 
     public function callback(SocialAccountService $service)
     {
+
         /** @var Authenticatable $user */
         $user = $service->createOrGetUser(Socialite::driver('facebook')->user());
 

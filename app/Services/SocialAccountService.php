@@ -1,7 +1,9 @@
 <?php
 
-namespace App;
+namespace App\Services;
 
+use App\Entities\SocialAccount;
+use App\User;
 use Laravel\Socialite\Contracts\User as ProviderUser;
 use Image;
 
