@@ -8,11 +8,8 @@
         </div>
     </div>
     <div class="box">
-        <a href="#"><img src="http://lorempixel.com/300/300/" alt=""></a>
-    </div>
-    <div class="box">
         <h2>Join our FB group</h2>
-        <a href="#" class="logo"><img src="/img/logo.png" alt=""></a>
+        <a href="#" class="logo"><img src="{{ asset('images/logo.png') }}"></a>
         <a href="#" class="btn btn-fb">Join our FB group</a>
     </div>
 </aside>

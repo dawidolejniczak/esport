@@ -2,25 +2,23 @@
 
 namespace App;
 
-use Backpack\CRUD\CrudTrait;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Backpack\Base\app\Notifications\ResetPasswordNotification as ResetPasswordNotification;
-use Spatie\Permission\Traits\HasRoles;
+use Prettus\Repository\Contracts\Transformable;
+use Prettus\Repository\Traits\TransformableTrait;
 
-class User extends Authenticatable
+class User extends Authenticatable implements Transformable
 {
-    use Notifiable;
-    use CrudTrait;
-    use HasRoles;
+    use TransformableTrait, Notifiable;
 
     /**
-     * The attributes that are mass assignable.
-     *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'image'
+        'name',
+        'email',
+        'image',
+        'password'
     ];
 
     /**
@@ -31,15 +29,4 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-    /**
-     * Send the password reset notification.
-     *
-     * @param  string  $token
-     * @return void
-     */
-    public function sendPasswordResetNotification($token)
-    {
-        $this->notify(new ResetPasswordNotification($token));
-    }
 }

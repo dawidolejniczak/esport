@@ -176,18 +176,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
 
-        /*
-        * Backpack Service Providers...
-        */
-        Backpack\Base\BaseServiceProvider::class,
-        Backpack\CRUD\CrudServiceProvider::class,
-        Spatie\Backup\BackupServiceProvider::class,
-        Backpack\BackupManager\BackupManagerServiceProvider::class,
-        Backpack\LogManager\LogManagerServiceProvider::class,
-        Backpack\Settings\SettingsServiceProvider::class,
-        Cviebrock\EloquentSluggable\ServiceProvider::class,
-        Backpack\PageManager\PageManagerServiceProvider::class,
-        Backpack\PermissionManager\PermissionManagerServiceProvider::class,
+
         App\Providers\RouteServiceProvider::class,
 
         /*

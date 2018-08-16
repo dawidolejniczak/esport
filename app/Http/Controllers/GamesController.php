@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\View\View;
 use Prettus\Repository\Criteria\RequestCriteria;
 use App\Http\Requests\GameCreateRequest;
 use App\Http\Requests\GameUpdateRequest;
@@ -26,9 +27,7 @@ class GamesController extends Controller
 
 
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\JsonResponse|\Illuminate\View\View
      */
     public function index()
     {
@@ -46,11 +45,8 @@ class GamesController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  GameCreateRequest $request
-     *
-     * @return \Illuminate\Http\Response
+     * @param GameCreateRequest $request
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse
      */
     public function store(GameCreateRequest $request)
     {
@@ -73,11 +69,8 @@ class GamesController extends Controller
 
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\JsonResponse|\Illuminate\View\View
      */
     public function show($id)
     {
@@ -95,13 +88,10 @@ class GamesController extends Controller
 
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return View
      */
-    public function edit($id)
+    public function edit($id): View
     {
 
         $game = $this->repository->find($id);
@@ -111,12 +101,9 @@ class GamesController extends Controller
 
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  GameUpdateRequest $request
-     * @param  string $id
-     *
-     * @return Response
+     * @param GameUpdateRequest $request
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse
      */
     public function update(GameUpdateRequest $request, $id)
     {
@@ -138,11 +125,8 @@ class GamesController extends Controller
 
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {
