@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Entities\User;
 use App\Forms\EditUserForm;
 use App\Forms\UserForm;
-use Carbon\Carbon;
-use Illuminate\Http\Request;
-use App\Http\Requests;
+use App\Services\UserService;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
 use Kris\LaravelFormBuilder\FormBuilder;
 use Prettus\Repository\Criteria\RequestCriteria;
 use App\Http\Requests\UserCreateRequest;
@@ -22,18 +21,27 @@ class UsersController extends Controller
     /**
      * @var UserRepository
      */
-    protected $repository;
+    private $repository;
 
-    public function __construct(UserRepository $repository)
+    /**
+     * @var UserService
+     */
+    private $userService;
+
+    /**
+     * UsersController constructor.
+     * @param UserRepository $repository
+     * @param UserService $userService
+     */
+    public function __construct(UserRepository $repository, UserService $userService)
     {
         $this->repository = $repository;
+        $this->userService = $userService;
     }
 
 
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\JsonResponse|\Illuminate\View\View
      */
     public function index()
     {
@@ -59,28 +67,18 @@ class UsersController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  UserCreateRequest $request
-     *
-     * @return \Illuminate\Http\Response
+     * @param UserCreateRequest $request
+     * @param FormBuilder $formBuilder
+     * @return RedirectResponse
      */
-    public function store(UserCreateRequest $request, FormBuilder $formBuilder)
+    public function store(UserCreateRequest $request, FormBuilder $formBuilder): RedirectResponse
     {
         $form = $formBuilder->create(UserForm::class);
         if (!$form->isValid()) {
             return redirect()->back()->withErrors($form->getErrors())->withInput()->with('dropdown', 'register');
         }
 
-        if ($request->image) {
-            $timestamp =  date('YmdHis');
-            $image = $request->file('image');
-            $fileName = $request->name . $timestamp . '.' . $image->getClientOriginalExtension();
-            $location = public_path('uploads\\' . $fileName);
-            Image::make($image)->fit(config(config('image.small_size')))->save($location);
-        } else {
-            $fileName = NULL;
-        }
+        $fileName = $this->userService->storeImage($request);
 
         $user = $this->repository->create([
             'name' => $request->name,
@@ -88,8 +86,6 @@ class UsersController extends Controller
             'image' => $fileName,
             'password' => bcrypt($request->password),
         ]);
-
-        $user->assignRole('user');
 
         $response = [
             'message' => 'User created.',
@@ -101,11 +97,8 @@ class UsersController extends Controller
 
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\JsonResponse|\Illuminate\View\View
      */
     public function show($id)
     {
@@ -123,11 +116,10 @@ class UsersController extends Controller
 
 
     /**
-     * Edit My Profile
      * @param FormBuilder $formBuilder
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return View
      */
-    public function edit(FormBuilder $formBuilder)
+    public function edit(FormBuilder $formBuilder): View
     {
         $user = $this->repository->find(Auth::user()->id);
         $form = $formBuilder->create(UserForm::class, [
@@ -142,29 +134,19 @@ class UsersController extends Controller
 
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  UserUpdateRequest $request
-     * @param  string $id
-     *
-     * @return Response
+     * @param UserUpdateRequest $request
+     * @param $id
+     * @param FormBuilder $formBuilder
+     * @return RedirectResponse
      */
-    public function update(UserUpdateRequest $request, $id, FormBuilder $formBuilder)
+    public function update(UserUpdateRequest $request, $id, FormBuilder $formBuilder): RedirectResponse
     {
         $form = $formBuilder->create(EditUserForm::class);
         if (!$form->isValid()) {
             return redirect()->back()->withErrors($form->getErrors())->withInput();
         }
 
-        $timestamp =  date('YmdHis');
-        if ($request->image) {
-            $image = $request->file('image');
-            $fileName = $request->name . $timestamp . '.' . $image->getClientOriginalExtension();
-            $location = public_path('uploads\\' . $fileName);
-            Image::make($image)->fit(config('image.small_size'))->save($location);
-        } else {
-            $fileName = NULL;
-        }
+        $fileName = $this->userService->storeImage($request);
 
 
         $user = $this->repository->update([
@@ -183,11 +165,8 @@ class UsersController extends Controller
 
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse|RedirectResponse
      */
     public function destroy($id)
     {

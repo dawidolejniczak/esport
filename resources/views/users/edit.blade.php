@@ -23,15 +23,4 @@
             </div>
         </div>
     </main>
-    @if(isset($user->image))
-        <script>
-            $(document).ready(function () {
-                $('.upload').css("background-image", "url('{{ asset('uploads/' . $user->image) }}')");
-                $('.upload').css("background-size", "cover");
-                $('.upload').css("background-position", "center center");
-                $('.upload').css("height", '200px');
-                $('.upload').find('span').text('');
-            });
-        </script>
-    @endif
 @endsection

@@ -6,19 +6,18 @@ use Alaouy\Youtube\Facades\Youtube;
 use App\Criteria\HotCriteria;
 use App\Criteria\QueueCriteria;
 use App\Forms\PostForm;
-use App\Repositories\GameRepository;
-use Backpack\Settings\app\Models\Setting;
+use App\Services\PostService;
 use Carbon\Carbon;
 use Cohensive\Embed\Facades\Embed;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
-use Image;
-use Illuminate\Http\Request;
-use App\Http\Requests;
+use Illuminate\View\View;
+use Intervention\Image\Facades\Image;
 use Kris\LaravelFormBuilder\FormBuilder;
-use Prettus\Repository\Criteria\RequestCriteria;
 use App\Http\Requests\PostCreateRequest;
 use App\Http\Requests\PostUpdateRequest;
 use App\Repositories\PostRepository;
+use Prettus\Validator\Contracts\ValidatorInterface;
 
 
 class PostsController extends Controller
@@ -27,11 +26,23 @@ class PostsController extends Controller
     /**
      * @var PostRepository
      */
-    protected $repository;
+    private $repository;
 
-    public function __construct(PostRepository $repository)
+    /**
+     * @var PostService
+     */
+    private $postService;
+
+
+    /**
+     * PostsController constructor.
+     * @param PostRepository $repository
+     * @param PostService $postService
+     */
+    public function __construct(PostRepository $repository, PostService $postService)
     {
         $this->repository = $repository;
+        $this->postService = $postService;
     }
 
     /**
@@ -41,34 +52,27 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $pagination = Setting::where('key', 'pagination')->first();
         $this->repository->pushCriteria(HotCriteria::class);
-        $posts = $this->repository->paginate($pagination->value);
+        $posts = $this->repository->paginate(25);
         return view('posts.hot', compact('posts'));
     }
 
     /**
-     * Display all Posts in Queue
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return View
      */
-    public function queue()
+    public function queue(): View
     {
-        $pagination = Setting::where('key', 'pagination')->first();
         $this->repository->pushCriteria(QueueCriteria::class);
-        $posts = $this->repository->paginate($pagination->value);
+        $posts = $this->repository->paginate(25);
         return view('posts.queue', compact('posts'));
     }
 
     /**
-     * Form to non-admin && admin user
-     *
      * @param FormBuilder $formBuilder
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @param PostCreateRequest $request
+     * @return View
      */
-
-    public function create(FormBuilder $formBuilder, PostCreateRequest $request)
+    public function create(FormBuilder $formBuilder, PostCreateRequest $request): View
     {
         $form = $formBuilder->create(PostForm::class);
         return view('posts.create', [
@@ -77,13 +81,11 @@ class PostsController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  PostCreateRequest $request
-     *
-     * @return \Illuminate\Http\Response
+     * @param PostCreateRequest $request
+     * @param FormBuilder $formBuilder
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(PostCreateRequest $request, FormBuilder $formBuilder)
+    public function store(PostCreateRequest $request, FormBuilder $formBuilder): RedirectResponse
     {
         $form = $formBuilder->create(PostForm::class);
         if (!$form->isValid()) {
@@ -94,59 +96,7 @@ class PostsController extends Controller
             return redirect()->back()->withErrors(['message' => 'Video or Image is required'])->withInput();
         }
 
-        $timestamp = date('YmdHis');
-        if (isset($request->image)) {
-            $image = $request->file('image');
-            list($width, $height) = getimagesize($image);
-            $originalExtension = $image->getClientOriginalExtension();
-        } else {
-            $videoCode = Youtube::parseVidFromURL($request->youTube);
-            $image = 'https://img.youtube.com/vi/' . $videoCode . '/maxresdefault.jpg';
-            $originalExtension = substr($image, strpos($image, 'maxresdefault.') + 14);
-            if(@getimagesize($image) === FALSE){
-                $image = 'https://img.youtube.com/vi/' . $videoCode . '/sddefault.jpg';
-                $originalExtension = substr($image, strpos($image, 'sddefault.') + 10);
-                if(@getimagesize($image) === FALSE){
-                    return redirect()->back()->withErrors(['message' => 'Change video or add image'])->withInput();
-                }
-            }
-        }
-
-        $fileNameMedium = $request->title . $timestamp . '.medium.' . $originalExtension;
-        $location = public_path('uploads\\' . $fileNameMedium);
-        Image::make($image)->fit(config('image.medium_size'))->save($location);
-
-        $fileNameMin = $request->title . $timestamp . '.min.' . $originalExtension;
-        $location = public_path('uploads\\' . $fileNameMin);
-        Image::make($image)->resize(config('image.small_size'), config('image.small_size'))->save($location);
-
-        $fileNameOriginal = $request->title . $timestamp . '.original.' . $originalExtension;
-        if ($originalExtension == 'gif') {
-            $fileName = $fileNameOriginal;
-            $image->move('uploads', $fileNameOriginal);
-        } else {
-            if (isset($request->image)) {
-                $fileName = $request->title . $timestamp . '.' . $originalExtension;
-                $location = public_path('uploads\\' . $fileName);
-                Image::make($image)->fit(config('image.large_width'), $height)->save($location);
-                $image->move('uploads', $fileNameOriginal);
-            } else {
-                $fileName = $request->title . $timestamp . '.' . $originalExtension;
-                $location = public_path('uploads\\' . $fileName);
-                Image::make($image)->fit(config('image.large_width'), '720')->save($location);
-            }
-        }
-
-        $post = $this->repository->create([
-            'title' => $request->title,
-            'image' => $fileName,
-            'youTube' => $request->youTube,
-            'embeddedCode' => $request->embeddedCode,
-            'date' => Carbon::now(),
-            'user_id' => Auth::user()->id
-        ]);
-
-        $this->repository->sync($post->id, 'games', $request->game);
+        $post = $this->postService->storePost($request);
 
         $response = [
             'message' => 'Post created.',
@@ -211,18 +161,14 @@ class PostsController extends Controller
 
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  PostUpdateRequest $request
-     * @param  string $id
-     *
-     * @return Response
+     * @param PostUpdateRequest $request
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse|RedirectResponse
      */
     public function update(PostUpdateRequest $request, $id)
     {
 
         try {
-
             $this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_UPDATE);
 
             $post = $this->repository->update($request->all(), $id);
@@ -238,7 +184,7 @@ class PostsController extends Controller
             }
 
             return redirect()->back()->with('message', $response['message']);
-        } catch (ValidatorException $e) {
+        } catch (\Exception $e) {
 
             if ($request->wantsJson()) {
 
@@ -254,11 +200,8 @@ class PostsController extends Controller
 
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse|RedirectResponse
      */
     public function destroy($id)
     {

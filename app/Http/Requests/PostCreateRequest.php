@@ -2,9 +2,7 @@
 
 namespace App\Http\Requests;
 
-use App\Entities\User;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\Auth;
 
 class PostCreateRequest extends FormRequest
 {
@@ -15,15 +13,7 @@ class PostCreateRequest extends FormRequest
      */
     public function authorize()
     {
-        if (!Auth::user()) {
-            return false;
-        }
-        $user = User::find(Auth::user()->id);
-        if ($user->hasPermission('Create_Posts')) {
-            return true;
-        } else {
-            return false;
-        }
+        return true;
 
     }
 
@@ -35,7 +25,9 @@ class PostCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required|string|min:5|max:255',
+            'timage' => 'required',
+            'status' => 'required'
         ];
     }
 }

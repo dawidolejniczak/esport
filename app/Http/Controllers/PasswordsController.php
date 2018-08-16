@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Forms\EditPasswordForm;
 use App\Repositories\UserRepository;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 use Kris\LaravelFormBuilder\FormBuilder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +22,11 @@ class PasswordsController extends Controller
         $this->repository = $repository;
     }
 
-    public function edit(FormBuilder $formBuilder)
+    /**
+     * @param FormBuilder $formBuilder
+     * @return View
+     */
+    public function edit(FormBuilder $formBuilder): View
     {
         $user = $this->repository->find(Auth::user()->id);
         $form = $formBuilder->create(EditPasswordForm::class, [
@@ -32,7 +38,13 @@ class PasswordsController extends Controller
         ]);
     }
 
-    public function update(Request $request, $id, FormBuilder $formBuilder)
+    /**
+     * @param Request $request
+     * @param $id
+     * @param FormBuilder $formBuilder
+     * @return RedirectResponse
+     */
+    public function update(Request $request, $id, FormBuilder $formBuilder): RedirectResponse
     {
         $form = $formBuilder->create(EditPasswordForm::class);
         if (!$form->isValid()) {
