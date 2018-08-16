@@ -2,9 +2,7 @@
 
 namespace App\Http\Requests;
 
-use App\Entities\User;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\Auth;
 
 class PostCreateRequest extends FormRequest
 {
@@ -27,7 +25,7 @@ class PostCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|numeric|min:0|max:255'
         ];
     }
 }
