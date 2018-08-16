@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="stylesheet" media="all" href="{{ asset('css/style.css') }}">
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="/js/uploadImage.js"></script>
 </head>
 <body @if(Request::is('posts/create')
 || Request::is('users/create') ||
