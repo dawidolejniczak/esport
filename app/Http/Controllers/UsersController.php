@@ -2,12 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Entities\User;
 use App\Forms\EditUserForm;
 use App\Forms\UserForm;
-use Carbon\Carbon;
-use Illuminate\Http\Request;
-use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use Kris\LaravelFormBuilder\FormBuilder;
 use Prettus\Repository\Criteria\RequestCriteria;
@@ -73,7 +69,7 @@ class UsersController extends Controller
         }
 
         if ($request->image) {
-            $timestamp =  date('YmdHis');
+            $timestamp = date('YmdHis');
             $image = $request->file('image');
             $fileName = $request->name . $timestamp . '.' . $image->getClientOriginalExtension();
             $location = public_path('uploads\\' . $fileName);
@@ -154,7 +150,7 @@ class UsersController extends Controller
             return redirect()->back()->withErrors($form->getErrors())->withInput();
         }
 
-        $timestamp =  date('YmdHis');
+        $timestamp = date('YmdHis');
         if ($request->image) {
             $image = $request->file('image');
             $fileName = $request->name . $timestamp . '.' . $image->getClientOriginalExtension();

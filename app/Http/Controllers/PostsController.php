@@ -96,10 +96,10 @@ class PostsController extends Controller
             $videoCode = Youtube::parseVidFromURL($request->youTube);
             $image = 'https://img.youtube.com/vi/' . $videoCode . '/maxresdefault.jpg';
             $originalExtension = substr($image, strpos($image, 'maxresdefault.') + 14);
-            if(@getimagesize($image) === FALSE){
+            if (@getimagesize($image) === FALSE) {
                 $image = 'https://img.youtube.com/vi/' . $videoCode . '/sddefault.jpg';
                 $originalExtension = substr($image, strpos($image, 'sddefault.') + 10);
-                if(@getimagesize($image) === FALSE){
+                if (@getimagesize($image) === FALSE) {
                     return redirect()->back()->withErrors(['message' => 'Change video or add image'])->withInput();
                 }
             }
